@@ -16,10 +16,6 @@ window.addEventListener('load', () => {
         });
     }
 
-    // 3. Initialize GitHub Calendar
-    if(typeof GitHubCalendar !== 'undefined') {
-        GitHubCalendar(".calendar", "KABEER-321", { responsive: true, tooltips: true });
-    }
 
     // 4. Fetch GitHub Repos
     fetchGitHubRepos();
@@ -132,14 +128,75 @@ function openModal(e) {
 }
 
 function closeModal() {
-    modal.classList.remove('show-modal');
+    if(modal) modal.classList.remove('show-modal');
 }
 
 if(openBtn) openBtn.addEventListener('click', openModal);
 if(openBtnFooter) openBtnFooter.addEventListener('click', openModal);
 if(closeBtn) closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click', (e) => {
-    if(e.target == modal) closeModal();
+    if(modal && e.target == modal) closeModal();
+});
+
+/* ================= CERTIFICATE MODAL ================= */
+const certModal = document.getElementById('cert-modal');
+const openCertBtns = document.querySelectorAll('.open-cert-btn');
+const closeCertBtn = certModal ? certModal.querySelector('.close-modal') : null;
+const certIframe = document.getElementById('cert-iframe');
+const certFallback = document.getElementById('cert-fallback');
+const certTitle = document.getElementById('cert-modal-title');
+const downloadCertBtn = document.getElementById('download-cert');
+
+function openCertModal(e) {
+    if (e) e.preventDefault();
+    if (!certModal || !certIframe || !certFallback || !certTitle || !downloadCertBtn) return;
+    
+    const btn = e.currentTarget;
+    const certPath = btn.getAttribute('data-cert');
+    const title = btn.getAttribute('data-title');
+    
+    certTitle.textContent = title;
+    downloadCertBtn.href = certPath;
+    
+    // Check if browser supports inline PDF viewing
+    const supportsPdf = (typeof navigator.pdfViewerEnabled !== 'undefined') ? navigator.pdfViewerEnabled : !/Mobi|Android/i.test(navigator.userAgent);
+    
+    if (supportsPdf) {
+        certIframe.src = certPath;
+        certIframe.style.display = 'block';
+        certFallback.style.display = 'none';
+    } else {
+        certIframe.src = '';
+        certIframe.style.display = 'none';
+        certFallback.style.display = 'block';
+    }
+    
+    certModal.classList.add('show-modal');
+}
+
+function closeCertModal() {
+    if (certModal) certModal.classList.remove('show-modal');
+    if (certIframe) certIframe.src = '';
+}
+
+if (openCertBtns.length > 0) {
+    openCertBtns.forEach(btn => {
+        btn.addEventListener('click', openCertModal);
+    });
+}
+
+if (closeCertBtn) closeCertBtn.addEventListener('click', closeCertModal);
+
+window.addEventListener('click', (e) => {
+    if (certModal && e.target == certModal) closeCertModal();
+});
+
+// Support Escape key to close modals
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+        closeCertModal();
+    }
 });
 
 /* ================= PROJECT FILTERING ================= */

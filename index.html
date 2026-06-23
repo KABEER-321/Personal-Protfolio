@@ -46,7 +46,7 @@
     <!-- Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" defer>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" defer/>
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" defer/>
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
@@ -80,6 +80,24 @@
             </div>
             <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" class="btn btn-primary mt-1" download>
                 Download Resume
+            </a>
+        </div>
+    </div>
+
+    <!-- Certificate Preview Modal -->
+    <div id="cert-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal close-cert">&times;</span>
+            <h2 id="cert-modal-title">Certificate Preview</h2>
+            <div class="pdf-container">
+                <iframe id="cert-iframe" src="" width="100%" height="600" style="border: none; display: block;"></iframe>
+                <div id="cert-fallback" style="display: none; padding: 3rem 1.5rem; text-align: center; color: var(--text-color);">
+                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0;">Click below to download and view the certificate.</p>
+                </div>
+            </div>
+            <a href="#" id="download-cert" class="btn btn-primary mt-1" download>
+                <i class="fas fa-download"></i> Download Certificate
             </a>
         </div>
     </div>
@@ -352,27 +370,6 @@
                         </a>
                     </article>
 
-                    <!-- Project 3 -->
-                    <article class="projects__card glass-card hover-glow project-item" data-category="python ai" data-aos="zoom-in" data-aos-delay="300">
-                        <a href="project-chatbot.html" class="project-card__link">
-                            <div class="projects__image">
-                                <div class="placeholder-img"><i class="fas fa-robot"></i></div>
-                            </div>
-                            <div class="projects__content">
-                                <h3 class="projects__title">AI Chatbot Assistant</h3>
-                                <p class="projects__description">Gemini API + RAG powered assistant delivering accurate, context-aware conversational responses.</p>
-                                <div class="projects__tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Gemini API</span>
-                                    <span class="tag">RAG</span>
-                                </div>
-                                <div class="projects__links mt-1">
-                                    <span class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> View Project</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
                     <!-- Project 4 -->
                     <article class="projects__card glass-card hover-glow project-item hidden-project" data-category="web" data-aos="zoom-in">
                         <a href="project-portfolio.html" class="project-card__link">
@@ -404,13 +401,6 @@
             <span class="section__subtitle" data-aos="fade-up">Open Source Contributions</span>
 
             <div class="container grid">
-                <!-- GitHub Heatmap -->
-                <div class="glass-card hover-glow w-100" data-aos="fade-up">
-                    <h3 class="skills__title text-center mb-1"><i class="fab fa-github"></i> Contribution Heatmap</h3>
-                    <div class="calendar-wrapper">
-                        <div class="calendar">Loading GitHub Calendar...</div>
-                    </div>
-                </div>
 
                 <!-- Live Repos Showcase -->
                 <div class="github-repos mt-1" data-aos="fade-up">
@@ -473,13 +463,13 @@
                         <i class="fas fa-shield-alt cert__icon"></i>
                         <h4 class="cert__title">Cybersecurity Fundamentals</h4>
                         <span class="cert__issuer">Coursera</span>
-                        <a href="#" class="btn btn-outline btn-sm mt-1">Verify Credential</a>
+                        <a href="#" class="btn btn-outline btn-sm mt-1 open-cert-btn" data-cert="assets/certificates/cybersecurity-fundamentals.pdf" data-title="Cybersecurity Fundamentals">View Certificate</a>
                     </div>
                     <div class="cert__card glass-card hover-glow">
                         <i class="fas fa-database cert__icon"></i>
                         <h4 class="cert__title">MongoDB Course Completion</h4>
                         <span class="cert__issuer">MongoDB</span>
-                        <a href="#" class="btn btn-outline btn-sm mt-1">Verify Credential</a>
+                        <a href="#" class="btn btn-outline btn-sm mt-1 open-cert-btn" data-cert="assets/certificates/mongodb-certification.pdf" data-title="MongoDB Course Completion">View Certificate</a>
                     </div>
                 </div>
             </div>
@@ -593,7 +583,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>
