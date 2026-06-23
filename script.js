@@ -125,24 +125,10 @@ const modal = document.getElementById('resume-modal');
 const openBtn = document.getElementById('open-resume');
 const openBtnFooter = document.querySelector('.open-resume-footer');
 const closeBtn = document.querySelector('.close-modal');
-const resumeIframe = document.getElementById('resume-iframe');
-
-const RESUME_PATH = 'assets/resume/Mohammed_Kabeer_Resume.pdf';
-
-function getAbsoluteResumeUrl() {
-    // Build absolute URL from relative path for Google Docs Viewer
-    const base = window.location.href.replace(/\/[^\/]*$/, '/');
-    return base + RESUME_PATH;
-}
 
 function openModal(e) {
     if(e) e.preventDefault();
     modal.classList.add('show-modal');
-    // Lazy-load PDF into iframe using Google Docs Viewer
-    if(resumeIframe && !resumeIframe.src.includes('docs.google.com')) {
-        const absoluteUrl = getAbsoluteResumeUrl();
-        resumeIframe.src = 'https://docs.google.com/gview?url=' + encodeURIComponent(absoluteUrl) + '&embedded=true';
-    }
 }
 
 function closeModal() {
