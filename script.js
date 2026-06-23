@@ -325,3 +325,54 @@ if (typeof particlesJS !== 'undefined') {
         "retina_detect": true
     });
 }
+
+/* ================= LIGHTBOX FUNCTIONALITY ================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const screenshotImgs = document.querySelectorAll('.screenshot-img');
+
+    if (lightbox && lightboxImg && closeBtn) {
+        screenshotImgs.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+                
+                // Get caption from parent element's h3 and p
+                const parent = img.closest('.screenshot-card');
+                if (parent) {
+                    const title = parent.querySelector('h3') ? parent.querySelector('h3').textContent : '';
+                    const desc = parent.querySelector('p') ? parent.querySelector('p').textContent : '';
+                    lightboxCaption.innerHTML = `<strong>${title}</strong><br>${desc}`;
+                } else {
+                    lightboxCaption.textContent = img.alt || '';
+                }
+                
+                setTimeout(() => lightbox.classList.add('show'), 50);
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('show');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+        };
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === closeBtn) {
+                closeLightbox();
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                closeLightbox();
+            }
+        });
+    }
+});

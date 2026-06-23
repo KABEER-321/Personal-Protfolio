@@ -246,21 +246,92 @@
 .screenshots__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .screenshot-card {
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.screenshot-card img {
+.screenshot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+}
+
+.screenshot-img__wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.screenshot-img {
   width: 100%;
-  transition: transform 0.4s;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.screenshot-card:hover img {
-  transform: scale(1.03);
+.screenshot-hover__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 15, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.screenshot-hover__overlay i {
+  font-size: 2.5rem;
+  color: var(--first-color);
+  text-shadow: 0 0 15px var(--first-color);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.screenshot-img__wrapper:hover .screenshot-img {
+  transform: scale(1.05);
+}
+
+.screenshot-img__wrapper:hover .screenshot-hover__overlay {
+  opacity: 1;
+}
+
+.screenshot-img__wrapper:hover .screenshot-hover__overlay i {
+  transform: scale(1);
+}
+
+.screenshot-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-top: 1px solid var(--glass-border);
+}
+
+.screenshot-info h3 {
+  font-size: 1.15rem;
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.screenshot-info p {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  line-height: 1.5;
+  flex-grow: 1;
 }
 
 .screenshot-placeholder {
@@ -283,6 +354,74 @@
 .screenshot-placeholder span {
   font-weight: 500;
 }
+
+/* ================= LIGHTBOX MODAL ================= */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-width: 1000px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 50px rgba(0, 242, 254, 0.25);
+  transform: scale(0.95);
+  transition: transform 0.3s ease-out;
+}
+
+.lightbox-modal.show .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 2010;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: var(--first-color);
+  text-decoration: none;
+}
+
+.lightbox-caption {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-width: 1000px;
+  text-align: center;
+  color: var(--text-color);
+  padding: 20px 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  line-height: 1.6;
+}
+
+.lightbox-caption strong {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+}
+
 
 /* ================= CHALLENGES ================= */
 .challenges__grid {
@@ -436,5 +575,39 @@
 
 @media screen and (min-width: 1024px) {
   .project-features__grid { grid-template-columns: repeat(4, 1fr); }
-  .screenshots__grid { grid-template-columns: repeat(4, 1fr); }
+  .screenshots__grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ================= UTILITY & CTA ================= */
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.project-cta {
+  padding: 3.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1.25rem;
+}
+
+.project-cta__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.75rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.project-cta__desc {
+  color: var(--text-color);
+  max-width: 620px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+  font-size: var(--normal-font-size);
+}
+
