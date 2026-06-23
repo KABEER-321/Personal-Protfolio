@@ -10,9 +10,10 @@ window.addEventListener('load', () => {
     // 2. Initialize AOS Animations
     if(typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true,
-            offset: 50,
+            offset: 20,
+            disable: 'mobile' // Disable scroll animations on mobile devices for smooth performance
         });
     }
 
@@ -447,6 +448,89 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Escape' && lightbox.style.display === 'block') {
                 closeLightbox();
             }
+        });
+    }
+});
+
+/* ================= CUSTOM CURSOR IMPLEMENTATION ================= */
+document.addEventListener('DOMContentLoaded', () => {
+    // Only initialize custom cursor on non-touch devices
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
+    
+    if (!isTouchDevice) {
+        const cursorDot = document.createElement('div');
+        const cursorOutline = document.createElement('div');
+        cursorDot.className = 'cursor-dot';
+        cursorOutline.className = 'cursor-outline';
+        document.body.appendChild(cursorDot);
+        document.body.appendChild(cursorOutline);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let outlineX = 0;
+        let outlineY = 0;
+        
+        let cursorVisible = false;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if (!cursorVisible) {
+                cursorDot.style.opacity = '1';
+                cursorOutline.style.opacity = '1';
+                cursorVisible = true;
+            }
+            
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+
+        // Smooth trailing effect using requestAnimationFrame
+        const animateOutline = () => {
+            const ease = 0.15;
+            outlineX += (mouseX - outlineX) * ease;
+            outlineY += (mouseY - outlineY) * ease;
+            
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+            
+            requestAnimationFrame(animateOutline);
+        };
+        requestAnimationFrame(animateOutline);
+
+        // Hover animations
+        const updateInteractiveHover = () => {
+            const targets = document.querySelectorAll('a, button, .btn, .open-cert-btn, .screenshot-img__wrapper, .filter-btn, .projects__card');
+            targets.forEach(target => {
+                target.addEventListener('mouseenter', () => {
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorOutline.style.backgroundColor = 'rgba(0, 242, 254, 0.05)';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(0)';
+                });
+                target.addEventListener('mouseleave', () => {
+                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorOutline.style.backgroundColor = 'transparent';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
+        };
+        
+        updateInteractiveHover();
+        
+        // Re-run hover binds when project filtering happens
+        const filterBtnsList = document.querySelectorAll('.filter-btn');
+        filterBtnsList.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(updateInteractiveHover, 100);
+            });
+        });
+        
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.opacity = '0';
+            cursorOutline.style.opacity = '0';
+            cursorVisible = false;
         });
     }
 });

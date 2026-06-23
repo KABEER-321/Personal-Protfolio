@@ -64,12 +64,15 @@
 }
 
 .project-hero__title {
-  font-size: var(--biggest-font-size);
+  font-size: clamp(1.8rem, 8vw, 3.2rem);
   line-height: 1.1;
   margin-bottom: 0.75rem;
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .project-hero__subtitle {
@@ -609,5 +612,23 @@
   margin: 0 auto 1.5rem;
   line-height: 1.7;
   font-size: var(--normal-font-size);
+}
+
+/* ================= RESPONSIVE OVERRIDES ================= */
+@media screen and (max-width: 480px) {
+  .project-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .project-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .results__grid {
+    grid-template-columns: 1fr;
+  }
+  .project-cta {
+    padding: 2.5rem 1rem;
+  }
 }
 
