@@ -332,28 +332,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeBtn = document.querySelector('.lightbox-close');
+    const screenshotWrappers = document.querySelectorAll('.screenshot-img__wrapper');
     const screenshotImgs = document.querySelectorAll('.screenshot-img');
 
     if (lightbox && lightboxImg && closeBtn) {
-        screenshotImgs.forEach(img => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                lightbox.style.display = 'block';
-                lightboxImg.src = img.src;
-                
-                // Get caption from parent element's h3 and p
-                const parent = img.closest('.screenshot-card');
-                if (parent) {
-                    const title = parent.querySelector('h3') ? parent.querySelector('h3').textContent : '';
-                    const desc = parent.querySelector('p') ? parent.querySelector('p').textContent : '';
-                    lightboxCaption.innerHTML = `<strong>${title}</strong><br>${desc}`;
-                } else {
-                    lightboxCaption.textContent = img.alt || '';
-                }
-                
-                setTimeout(() => lightbox.classList.add('show'), 50);
+        // Helper function to show lightbox
+        const openLightbox = (img, parent) => {
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+            
+            if (parent) {
+                const title = parent.querySelector('h3') ? parent.querySelector('h3').textContent : '';
+                const desc = parent.querySelector('p') ? parent.querySelector('p').textContent : '';
+                lightboxCaption.innerHTML = `<strong>${title}</strong><br>${desc}`;
+            } else {
+                lightboxCaption.textContent = img.alt || '';
+            }
+            
+            setTimeout(() => lightbox.classList.add('show'), 50);
+        };
+
+        // Attach click handlers to wrappers if they exist, else directly to images
+        if (screenshotWrappers.length > 0) {
+            screenshotWrappers.forEach(wrapper => {
+                wrapper.style.cursor = 'pointer';
+                wrapper.addEventListener('click', () => {
+                    const img = wrapper.querySelector('.screenshot-img');
+                    if (img) {
+                        openLightbox(img, wrapper.closest('.screenshot-card'));
+                    }
+                });
             });
-        });
+        } else {
+            screenshotImgs.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    openLightbox(img, img.closest('.screenshot-card'));
+                });
+            });
+        }
 
         const closeLightbox = () => {
             lightbox.classList.remove('show');
