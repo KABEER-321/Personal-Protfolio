@@ -483,3 +483,16 @@ img { max-width: 100%; height: auto; display: block; }
   .home__img-wrapper { width: 400px; }
   .repo-container { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ================= RESUME MODAL ACTIONS ================= */
+.resume-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#resume-iframe {
+  border-radius: 0.5rem;
+  background-color: #1a1a2e;
+}
