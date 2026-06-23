@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Assistant | Mohammed Kabeer</title>
+    <meta name="description" content="AI Chatbot Assistant - Gemini API + RAG Powered Intelligent Assistant built with Python.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body class="dark-theme">
+
+    <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-bar"></div></div>
+    <div id="particles-js"></div>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Kabeer<span>.</span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
+                    <li class="nav__item"><a href="index.html#github" class="nav__link">GitHub</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="project-hero">
+            <div class="container">
+                <a href="index.html#projects" class="project-hero__back" data-aos="fade-right"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <div class="project-hero__content" data-aos="fade-up">
+                    <span class="project-hero__label">Featured Project</span>
+                    <h1 class="project-hero__title">AI Chatbot Assistant</h1>
+                    <p class="project-hero__subtitle">Gemini API + RAG Powered Assistant</p>
+                    <div class="project-hero__tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">RAG</span>
+                    </div>
+                    <div class="project-hero__actions">
+                        <a href="#" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="project-hero__image" data-aos="fade-left">
+                    <div class="placeholder-img project-hero__placeholder"><i class="fas fa-robot"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Project Overview</h2>
+                <div class="project-overview glass-card hover-glow" data-aos="fade-up">
+                    <p>AI Chatbot Assistant is an intelligent conversational agent powered by Google's Gemini API and enhanced with Retrieval Augmented Generation (RAG). It delivers accurate, context-aware responses by grounding its answers in a custom knowledge base, enabling multi-turn conversations that feel natural while maintaining factual accuracy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Problem Statement</h2>
+                <div class="project-problem glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-problem__icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="project-problem__content">
+                        <p>Traditional chatbots rely on rigid decision trees or keyword matching, resulting in frustrating user experiences. General-purpose LLMs, while more conversational, frequently hallucinate and cannot reliably answer domain-specific questions. Organizations need an assistant that combines the natural language understanding of modern AI with the accuracy of verified, domain-specific knowledge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Solution Approach</h2>
+                <div class="project-solution glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-solution__icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="project-solution__content">
+                        <p>By implementing a RAG pipeline on top of Google's Gemini API, the chatbot first retrieves relevant documents from a custom knowledge base before generating responses. This ensures every answer is grounded in verified information while maintaining the conversational fluency of a large language model. The system supports multi-turn conversations with full context retention.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Key Features</h2>
+                <div class="project-features__grid">
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card__icon"><i class="fas fa-brain"></i></div>
+                        <h3>Context Awareness</h3>
+                        <p>Maintains conversation context across multiple turns, understanding follow-up questions and references to previous messages.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-card__icon"><i class="fas fa-search"></i></div>
+                        <h3>RAG Search</h3>
+                        <p>Retrieval Augmented Generation pipeline that searches through custom documents to find relevant context before generating responses.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card__icon"><i class="fas fa-comments"></i></div>
+                        <h3>Multi-turn Conversation</h3>
+                        <p>Supports natural, flowing conversations with history tracking and contextual understanding across entire chat sessions.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+                        <div class="feature-card__icon"><i class="fas fa-book"></i></div>
+                        <h3>Knowledge Retrieval</h3>
+                        <p>Efficiently queries and retrieves information from custom document collections, ensuring responses are factually grounded.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card__icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Fast Response</h3>
+                        <p>Optimized retrieval and generation pipeline that delivers accurate responses with minimal latency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Technology Stack</h2>
+                <div class="tech-stack__grid">
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-brain"></i><span>Gemini API</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-search"></i><span>RAG</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-file-alt"></i><span>LangChain</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Screenshots</h2>
+                <div class="screenshots__grid">
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100"><div class="screenshot-placeholder"><i class="fas fa-comments"></i><span>Chat Interface</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200"><div class="screenshot-placeholder"><i class="fas fa-search"></i><span>RAG Pipeline</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300"><div class="screenshot-placeholder"><i class="fas fa-cogs"></i><span>Configuration</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Challenges & Solutions</h2>
+                <div class="challenges__grid">
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>Hallucination Prevention</h3>
+                        <p>The base Gemini model would generate confident but incorrect answers when asked about domain-specific topics not in its training data.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>RAG Grounding</h3>
+                        <p>Implemented a retrieval step that fetches relevant documents before generation, constraining the model's responses to verified information from the knowledge base.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>Context Window Limits</h3>
+                        <p>Long conversations would exceed the model's context window, causing it to lose track of earlier messages and context.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>Sliding Window + Summarization</h3>
+                        <p>Implemented a sliding context window with periodic conversation summarization, maintaining the most relevant context while staying within token limits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Results & Impact</h2>
+                <div class="results__grid">
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><div class="result-card__number">95%</div><div class="result-card__label">Response Accuracy</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><div class="result-card__number"><2s</div><div class="result-card__label">Avg Response Time</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300"><div class="result-card__number">RAG</div><div class="result-card__label">Grounded Responses</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400"><div class="result-card__number">∞</div><div class="result-card__label">Multi-turn Support</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-nav-section">
+            <div class="container">
+                <div class="project-nav">
+                    <a href="project-bugtracker.html" class="project-nav__link prev glass-card hover-glow">
+                        <i class="fas fa-arrow-left"></i>
+                        <div><span class="project-nav__label">Previous Project</span><span class="project-nav__name">AI Bug Tracker</span></div>
+                    </a>
+                    <a href="project-portfolio.html" class="project-nav__link next glass-card hover-glow">
+                        <div><span class="project-nav__label">Next Project</span><span class="project-nav__name">Personal Portfolio</span></div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Kabeer<span>.</span></h1>
+            <ul class="footer__list">
+                <li><a href="index.html#about" class="footer__link">About</a></li>
+                <li><a href="index.html#projects" class="footer__link">Projects</a></li>
+                <li><a href="index.html#github" class="footer__link">GitHub</a></li>
+            </ul>
+            <ul class="footer__social">
+                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
+            </ul>
+            <span class="footer__copy">&#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top"><i class="fas fa-arrow-up scrollup__icon"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

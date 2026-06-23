@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bug Tracker | Mohammed Kabeer</title>
+    <meta name="description" content="AI Bug Tracker - Intelligent Bug Management System built with Flask, MySQL, Python and AI APIs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body class="dark-theme">
+
+    <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-bar"></div></div>
+    <div id="particles-js"></div>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Kabeer<span>.</span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
+                    <li class="nav__item"><a href="index.html#github" class="nav__link">GitHub</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="project-hero">
+            <div class="container">
+                <a href="index.html#projects" class="project-hero__back" data-aos="fade-right"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <div class="project-hero__content" data-aos="fade-up">
+                    <span class="project-hero__label">Featured Project</span>
+                    <h1 class="project-hero__title">AI Bug Tracker</h1>
+                    <p class="project-hero__subtitle">Intelligent Bug Management System</p>
+                    <div class="project-hero__tags">
+                        <span class="tag">Flask</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">AI APIs</span>
+                    </div>
+                    <div class="project-hero__actions">
+                        <a href="#" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="project-hero__image" data-aos="fade-left">
+                    <img src="assets/images/project2.png" alt="AI Bug Tracker" class="project-hero__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Project Overview</h2>
+                <div class="project-overview glass-card hover-glow" data-aos="fade-up">
+                    <p>AI Bug Tracker is an intelligent bug management system that leverages artificial intelligence to automate issue triaging, summarize bug reports, and recommend optimal assignments. Built with Flask and MySQL, it provides development teams with a streamlined workflow for tracking, categorizing, and resolving software defects efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Problem Statement</h2>
+                <div class="project-problem glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-problem__icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="project-problem__content">
+                        <p>Software development teams struggle with manual bug triaging that is time-consuming and error-prone. Bug reports are often poorly written, lack context, and get assigned to the wrong developers. This leads to delayed fixes, duplicated efforts, and critical bugs slipping through the cracks — ultimately impacting software quality and release timelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Solution Approach</h2>
+                <div class="project-solution glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-solution__icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="project-solution__content">
+                        <p>AI Bug Tracker introduces intelligent automation at every stage of the bug lifecycle. AI APIs automatically summarize verbose bug reports into concise descriptions, categorize bugs by severity and component, and recommend the most suitable developer for assignment based on their expertise and current workload. The Flask backend provides a clean REST API, while MySQL ensures reliable data persistence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Key Features</h2>
+                <div class="project-features__grid">
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card__icon"><i class="fas fa-bug"></i></div>
+                        <h3>Bug Tracking</h3>
+                        <p>Comprehensive bug lifecycle management with create, update, assign, resolve, and close workflows with full audit trails.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-card__icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI Summarization</h3>
+                        <p>Automatically generates concise summaries from verbose bug reports, making triaging faster and reducing developer context-switching.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card__icon"><i class="fas fa-user-check"></i></div>
+                        <h3>Assignment Suggestions</h3>
+                        <p>AI-powered developer recommendations based on expertise matching, current workload, and historical fix patterns.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+                        <div class="feature-card__icon"><i class="fas fa-tasks"></i></div>
+                        <h3>Status Management</h3>
+                        <p>Visual Kanban-style status tracking with customizable workflows: Open, In Progress, Review, Resolved, Closed.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card__icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3>Reporting Dashboard</h3>
+                        <p>Interactive analytics dashboard showing bug trends, resolution times, developer productivity, and severity distributions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Technology Stack</h2>
+                <div class="tech-stack__grid">
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-python"></i><span>Flask</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-database"></i><span>MySQL</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-brain"></i><span>AI APIs</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="350"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Screenshots</h2>
+                <div class="screenshots__grid">
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100"><div class="screenshot-placeholder"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200"><div class="screenshot-placeholder"><i class="fas fa-bug"></i><span>Bug Details</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300"><div class="screenshot-placeholder"><i class="fas fa-chart-bar"></i><span>Analytics</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="400"><div class="screenshot-placeholder"><i class="fas fa-brain"></i><span>AI Suggestions</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Challenges & Solutions</h2>
+                <div class="challenges__grid">
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>AI Response Latency</h3>
+                        <p>AI API calls for summarization added noticeable latency to the bug creation workflow, degrading user experience.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>Async Processing</h3>
+                        <p>Implemented asynchronous background processing for AI operations, allowing bugs to be created instantly while AI summaries are generated in the background.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>Assignment Accuracy</h3>
+                        <p>Initial developer recommendations had low accuracy due to limited historical data and vague bug descriptions.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>Expertise Profiling</h3>
+                        <p>Built developer expertise profiles based on past assignments and resolution patterns, combined with keyword matching from bug descriptions to improve recommendation accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Results & Impact</h2>
+                <div class="results__grid">
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><div class="result-card__number">50%</div><div class="result-card__label">Faster Triaging</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><div class="result-card__number">AI</div><div class="result-card__label">Auto-Summarization</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300"><div class="result-card__number">85%</div><div class="result-card__label">Assignment Accuracy</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400"><div class="result-card__number">5+</div><div class="result-card__label">Status Workflows</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-nav-section">
+            <div class="container">
+                <div class="project-nav">
+                    <a href="project-smartcampus.html" class="project-nav__link prev glass-card hover-glow">
+                        <i class="fas fa-arrow-left"></i>
+                        <div><span class="project-nav__label">Previous Project</span><span class="project-nav__name">SmartCampus ERP</span></div>
+                    </a>
+                    <a href="project-chatbot.html" class="project-nav__link next glass-card hover-glow">
+                        <div><span class="project-nav__label">Next Project</span><span class="project-nav__name">AI Chatbot Assistant</span></div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Kabeer<span>.</span></h1>
+            <ul class="footer__list">
+                <li><a href="index.html#about" class="footer__link">About</a></li>
+                <li><a href="index.html#projects" class="footer__link">Projects</a></li>
+                <li><a href="index.html#github" class="footer__link">GitHub</a></li>
+            </ul>
+            <ul class="footer__social">
+                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
+            </ul>
+            <span class="footer__copy">&#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top"><i class="fas fa-arrow-up scrollup__icon"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

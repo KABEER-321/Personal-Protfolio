@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website | Mohammed Kabeer</title>
+    <meta name="description" content="Personal Portfolio Website - Premium Cyberpunk Developer Portfolio built with HTML, CSS, and JavaScript.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body class="dark-theme">
+
+    <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-bar"></div></div>
+    <div id="particles-js"></div>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Kabeer<span>.</span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
+                    <li class="nav__item"><a href="index.html#github" class="nav__link">GitHub</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="project-hero">
+            <div class="container">
+                <a href="index.html#projects" class="project-hero__back" data-aos="fade-right"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+                <div class="project-hero__content" data-aos="fade-up">
+                    <span class="project-hero__label">Featured Project</span>
+                    <h1 class="project-hero__title">Personal Portfolio Website</h1>
+                    <p class="project-hero__subtitle">Premium Cyberpunk Developer Portfolio</p>
+                    <div class="project-hero__tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-hero__actions">
+                        <a href="https://mohammed-kabeer-portfolio.netlify.app" target="_blank" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/KABEER-321/Personal-Protfolio" target="_blank" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="project-hero__image" data-aos="fade-left">
+                    <img src="assets/images/project3.png" alt="Personal Portfolio" class="project-hero__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Project Overview</h2>
+                <div class="project-overview glass-card hover-glow" data-aos="fade-up">
+                    <p>A premium, production-ready developer portfolio designed with a cyberpunk glassmorphism aesthetic. This single-page application showcases projects, skills, and achievements with smooth animations, live GitHub API integration, and a responsive design that looks stunning on every device. Built entirely with vanilla HTML, CSS, and JavaScript — no frameworks required.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Design Goals</h2>
+                <div class="project-solution glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-solution__icon"><i class="fas fa-palette"></i></div>
+                    <div class="project-solution__content">
+                        <p>The primary goal was to create a portfolio that immediately communicates professionalism and technical competence — something a recruiter opens and instantly recognizes as the work of a serious developer, not a student project. The design draws inspiration from cyberpunk aesthetics with deep navy backgrounds, neon cyan accents, glassmorphism cards, and smooth micro-animations that make every interaction feel premium.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Key Features</h2>
+                <div class="project-features__grid">
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card__icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Responsive Design</h3>
+                        <p>Fully responsive layout that adapts seamlessly from mobile phones to ultra-wide desktop displays using CSS Grid and Flexbox.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-card__icon"><i class="fas fa-gem"></i></div>
+                        <h3>Glassmorphism UI</h3>
+                        <p>Premium frosted glass cards with backdrop blur effects, translucent backgrounds, and subtle border highlights.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card__icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Cyberpunk Theme</h3>
+                        <p>Deep navy (#050816) background with vibrant neon cyan accents, gradient glowing buttons, and particle background effects.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+                        <div class="feature-card__icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>Project Showcase</h3>
+                        <p>Dedicated case-study pages for each project with detailed problem statements, solutions, tech stacks, and results.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card__icon"><i class="fas fa-envelope"></i></div>
+                        <h3>Contact Form</h3>
+                        <p>Production-ready contact form integrated with FormSubmit for direct email delivery with spam protection.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="350">
+                        <div class="feature-card__icon"><i class="fas fa-file-pdf"></i></div>
+                        <h3>Resume Preview</h3>
+                        <p>Integrated resume preview modal with embedded PDF viewer and one-click download functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Technology Stack</h2>
+                <div class="tech-stack__grid">
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="150"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-atom"></i><span>Particles.js</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-eye"></i><span>AOS.js</span></div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="350"><i class="fab fa-github"></i><span>GitHub API</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Screenshots</h2>
+                <div class="screenshots__grid">
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100"><div class="screenshot-placeholder"><i class="fas fa-home"></i><span>Hero Section</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200"><div class="screenshot-placeholder"><i class="fas fa-code"></i><span>Skills Section</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300"><div class="screenshot-placeholder"><i class="fas fa-project-diagram"></i><span>Projects Section</span></div></div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="400"><div class="screenshot-placeholder"><i class="fas fa-mobile-alt"></i><span>Mobile View</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Challenges & Solutions</h2>
+                <div class="challenges__grid">
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>Cross-Browser Glassmorphism</h3>
+                        <p>The backdrop-filter CSS property used for glassmorphism has inconsistent support across browsers, particularly older versions of Firefox.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>Progressive Enhancement</h3>
+                        <p>Implemented progressive enhancement with solid fallback backgrounds and used -webkit-backdrop-filter alongside standard properties for maximum compatibility.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header"><span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span></div>
+                        <h3>Performance with Particles</h3>
+                        <p>The Particles.js background animation caused frame drops on lower-end mobile devices, impacting scroll smoothness.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header"><span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span></div>
+                        <h3>Reduced Particle Count</h3>
+                        <p>Reduced particle density on mobile via responsive configuration and enabled hardware-accelerated CSS transforms for smooth animations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Results & Impact</h2>
+                <div class="results__grid">
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100"><div class="result-card__number">90+</div><div class="result-card__label">Lighthouse Score</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200"><div class="result-card__number">0</div><div class="result-card__label">Frameworks Used</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300"><div class="result-card__number">100%</div><div class="result-card__label">Responsive</div></div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400"><div class="result-card__number">SEO</div><div class="result-card__label">Fully Optimized</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-nav-section">
+            <div class="container">
+                <div class="project-nav">
+                    <a href="project-chatbot.html" class="project-nav__link prev glass-card hover-glow">
+                        <i class="fas fa-arrow-left"></i>
+                        <div><span class="project-nav__label">Previous Project</span><span class="project-nav__name">AI Chatbot Assistant</span></div>
+                    </a>
+                    <a href="project-smartcampus.html" class="project-nav__link next glass-card hover-glow">
+                        <div><span class="project-nav__label">Next Project</span><span class="project-nav__name">SmartCampus ERP</span></div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Kabeer<span>.</span></h1>
+            <ul class="footer__list">
+                <li><a href="index.html#about" class="footer__link">About</a></li>
+                <li><a href="index.html#projects" class="footer__link">Projects</a></li>
+                <li><a href="index.html#github" class="footer__link">GitHub</a></li>
+            </ul>
+            <ul class="footer__social">
+                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
+            </ul>
+            <span class="footer__copy">&#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top"><i class="fas fa-arrow-up scrollup__icon"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

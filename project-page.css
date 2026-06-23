@@ -1,0 +1,440 @@
+/* ================= PROJECT CASE STUDY PAGES ================= */
+/* Dedicated styles for project detail pages */
+
+/* ---- Project Card Link (Home Page) ---- */
+.project-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.project-card__link:hover .projects__title {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-card__link:hover .btn-primary {
+  transform: translateX(4px);
+}
+
+/* ================= PROJECT HERO ================= */
+.project-hero {
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 3rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.project-hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.project-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--first-color);
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+  grid-column: 1 / -1;
+}
+
+.project-hero__back:hover {
+  transform: translateX(-5px);
+}
+
+.project-hero__label {
+  display: inline-block;
+  background: var(--gradient-1);
+  color: var(--body-color);
+  padding: 0.35rem 1rem;
+  border-radius: 2rem;
+  font-size: var(--smaller-font-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.project-hero__title {
+  font-size: var(--biggest-font-size);
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-hero__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-hero__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-hero__img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.1);
+}
+
+.project-hero__placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--first-color);
+  border-radius: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+/* ================= PROJECT SECTIONS ================= */
+.project-section {
+  padding: 4rem 0;
+}
+
+.project-section .section__title {
+  margin-bottom: 2rem;
+}
+
+/* Overview */
+.project-overview {
+  padding: 2rem;
+  font-size: var(--normal-font-size);
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* Problem & Solution */
+.project-problem,
+.project-solution {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.project-problem__icon,
+.project-solution__icon {
+  font-size: 2.5rem;
+  min-width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.1);
+  color: var(--first-color);
+}
+
+.project-problem__content p,
+.project-solution__content p {
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* ================= FEATURES GRID ================= */
+.project-features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.08);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-card h3 {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.feature-card p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  line-height: 1.6;
+}
+
+/* ================= TECH STACK ================= */
+.tech-stack__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 2rem;
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-card i {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.tech-card span {
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+}
+
+/* ================= SCREENSHOTS ================= */
+.screenshots__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.screenshot-card {
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.screenshot-card img {
+  width: 100%;
+  transition: transform 0.4s;
+}
+
+.screenshot-card:hover img {
+  transform: scale(1.03);
+}
+
+.screenshot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.05) 0%, rgba(79, 172, 254, 0.05) 100%);
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+}
+
+.screenshot-placeholder i {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.screenshot-placeholder span {
+  font-weight: 500;
+}
+
+/* ================= CHALLENGES ================= */
+.challenges__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  padding: 1.5rem;
+}
+
+.challenge-card__header {
+  margin-bottom: 0.75rem;
+}
+
+.challenge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  font-size: var(--smaller-font-size);
+  font-weight: 600;
+}
+
+.challenge-label.challenge {
+  background: rgba(255, 107, 107, 0.15);
+  color: #ff6b6b;
+}
+
+.challenge-label.solution {
+  background: rgba(81, 207, 102, 0.15);
+  color: #51cf66;
+}
+
+.challenge-card h3 {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.5rem;
+  color: var(--title-color);
+}
+
+.challenge-card p {
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--small-font-size);
+}
+
+/* ================= RESULTS ================= */
+.results__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.result-card {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+}
+
+.result-card__number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.result-card__label {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* ================= PROJECT NAVIGATION ================= */
+.project-nav-section {
+  padding-bottom: 4rem;
+}
+
+.project-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.project-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-nav__link:hover {
+  transform: translateY(-3px);
+}
+
+.project-nav__link i {
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.project-nav__link.next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.project-nav__label {
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin-bottom: 0.25rem;
+}
+
+.project-nav__name {
+  display: block;
+  font-size: var(--h3-font-size);
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (min-width: 568px) {
+  .project-features__grid { grid-template-columns: repeat(2, 1fr); }
+  .screenshots__grid { grid-template-columns: repeat(2, 1fr); }
+  .challenges__grid { grid-template-columns: repeat(2, 1fr); }
+  .project-nav { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (min-width: 768px) {
+  .project-hero .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .project-hero__back { grid-column: 1 / -1; }
+  .results__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media screen and (min-width: 968px) {
+  .project-features__grid { grid-template-columns: repeat(3, 1fr); }
+  .project-hero__title { font-size: 3.5rem; }
+}
+
+@media screen and (min-width: 1024px) {
+  .project-features__grid { grid-template-columns: repeat(4, 1fr); }
+  .screenshots__grid { grid-template-columns: repeat(4, 1fr); }
+}

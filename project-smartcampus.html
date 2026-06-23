@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCampus ERP Portal | Mohammed Kabeer</title>
+    <meta name="description" content="SmartCampus ERP Portal - AI-Powered Academic Management Platform built with Django, SQLite, Gemini API and RAG.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body class="dark-theme">
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-bar"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Kabeer<span>.</span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
+                    <li class="nav__item"><a href="index.html#github" class="nav__link">GitHub</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <a href="index.html#projects" class="project-hero__back" data-aos="fade-right">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <div class="project-hero__content" data-aos="fade-up">
+                    <span class="project-hero__label">Featured Project</span>
+                    <h1 class="project-hero__title">SmartCampus ERP Portal</h1>
+                    <p class="project-hero__subtitle">AI-Powered Academic Management Platform</p>
+                    <div class="project-hero__tags">
+                        <span class="tag">Django</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-hero__actions">
+                        <a href="#" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="project-hero__image" data-aos="fade-left">
+                    <img src="assets/images/project1.png" alt="SmartCampus ERP Portal" class="project-hero__img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Project Overview</h2>
+                <div class="project-overview glass-card hover-glow" data-aos="fade-up">
+                    <p>SmartCampus ERP Portal is a comprehensive full-stack academic management platform designed to digitize and streamline every aspect of campus operations. Built with Django and enhanced by Google's Gemini AI, it provides role-based dashboards for students, staff, parents, and administrators — all powered by intelligent automation and real-time data insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Problem Statement</h2>
+                <div class="project-problem glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-problem__icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="project-problem__content">
+                        <p>Traditional academic management relies on fragmented systems — paper-based attendance registers, disconnected grade spreadsheets, manual notification processes, and zero visibility for parents. This creates administrative overhead, data inconsistencies, delayed communication, and an overall poor experience for every stakeholder in the academic ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Solution Approach</h2>
+                <div class="project-solution glass-card hover-glow" data-aos="fade-up">
+                    <div class="project-solution__icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="project-solution__content">
+                        <p>SmartCampus consolidates all academic operations into a single, AI-enhanced web platform. By implementing role-based access control with Django's authentication system and integrating Google's Gemini API with Retrieval Augmented Generation (RAG), the portal delivers personalized dashboards, automated attendance tracking, intelligent grade analytics, and an AI chatbot that can answer questions about academic policies, schedules, and student performance using the institution's own knowledge base.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Key Features</h2>
+                <div class="project-features__grid">
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card__icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3>Student Dashboard</h3>
+                        <p>Personalized dashboard showing attendance, grades, upcoming assignments, timetable, and AI-powered academic insights.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-card__icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h3>Staff Dashboard</h3>
+                        <p>Comprehensive tools for managing attendance, uploading marks, generating reports, and communicating with students and parents.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card__icon"><i class="fas fa-users"></i></div>
+                        <h3>Parent Dashboard</h3>
+                        <p>Real-time visibility into their child's academic performance, attendance records, and institutional notifications.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+                        <div class="feature-card__icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>Admin Dashboard</h3>
+                        <p>Full control over user management, system configuration, analytics overview, and institutional data management.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card__icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3>Attendance Management</h3>
+                        <p>Digital attendance tracking with automated calculations, absence alerts, and detailed attendance analytics.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="350">
+                        <div class="feature-card__icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Marks Management</h3>
+                        <p>Centralized grade management with automated GPA calculations, performance trends, and exportable report cards.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-card__icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Chatbot</h3>
+                        <p>Gemini-powered chatbot with RAG capabilities that answers academic queries using the institution's knowledge base.</p>
+                    </div>
+                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="450">
+                        <div class="feature-card__icon"><i class="fas fa-bell"></i></div>
+                        <h3>Notifications</h3>
+                        <p>Real-time notification system for announcements, assignment deadlines, attendance alerts, and grade updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Technology Stack</h2>
+                <div class="tech-stack__grid">
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-python"></i>
+                        <span>Django</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="150">
+                        <i class="fas fa-database"></i>
+                        <span>SQLite</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-brain"></i>
+                        <span>Gemini API</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="250">
+                        <i class="fas fa-search"></i>
+                        <span>RAG</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="350">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Screenshots</h2>
+                <div class="screenshots__grid">
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="screenshot-placeholder"><i class="fas fa-desktop"></i><span>Student Dashboard</span></div>
+                    </div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="screenshot-placeholder"><i class="fas fa-chalkboard"></i><span>Staff Panel</span></div>
+                    </div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="screenshot-placeholder"><i class="fas fa-robot"></i><span>AI Chatbot</span></div>
+                    </div>
+                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="400">
+                        <div class="screenshot-placeholder"><i class="fas fa-chart-line"></i><span>Analytics</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Challenges & Solutions</h2>
+                <div class="challenges__grid">
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header">
+                            <span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span>
+                        </div>
+                        <h3>Role-Based Access Control</h3>
+                        <p>Managing four different user roles (Student, Staff, Parent, Admin) with distinct permissions and data visibility was architecturally complex.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header">
+                            <span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span>
+                        </div>
+                        <h3>Django Groups & Middleware</h3>
+                        <p>Leveraged Django's built-in Groups and Permissions framework with custom middleware to enforce role-based routing and data access at the view level.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                        <div class="challenge-card__header">
+                            <span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span>
+                        </div>
+                        <h3>AI Context Accuracy</h3>
+                        <p>The AI chatbot initially hallucinated answers when asked about specific institutional policies or student data not in its training data.</p>
+                    </div>
+                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+                        <div class="challenge-card__header">
+                            <span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span>
+                        </div>
+                        <h3>RAG Pipeline</h3>
+                        <p>Implemented Retrieval Augmented Generation (RAG) to ground the Gemini API's responses in the institution's actual documents and database records, dramatically improving accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Impact -->
+        <section class="project-section">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-up">Results & Impact</h2>
+                <div class="results__grid">
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="result-card__number">4</div>
+                        <div class="result-card__label">Role-Based Dashboards</div>
+                    </div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="result-card__number">100%</div>
+                        <div class="result-card__label">Digital Attendance</div>
+                    </div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="result-card__number">AI</div>
+                        <div class="result-card__label">Chatbot Integrated</div>
+                    </div>
+                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="result-card__number">RAG</div>
+                        <div class="result-card__label">Context-Aware Responses</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Navigation -->
+        <section class="project-section project-nav-section">
+            <div class="container">
+                <div class="project-nav">
+                    <a href="project-portfolio.html" class="project-nav__link prev glass-card hover-glow">
+                        <i class="fas fa-arrow-left"></i>
+                        <div>
+                            <span class="project-nav__label">Previous Project</span>
+                            <span class="project-nav__name">Personal Portfolio</span>
+                        </div>
+                    </a>
+                    <a href="project-bugtracker.html" class="project-nav__link next glass-card hover-glow">
+                        <div>
+                            <span class="project-nav__label">Next Project</span>
+                            <span class="project-nav__name">AI Bug Tracker</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Kabeer<span>.</span></h1>
+            <ul class="footer__list">
+                <li><a href="index.html#about" class="footer__link">About</a></li>
+                <li><a href="index.html#projects" class="footer__link">Projects</a></li>
+                <li><a href="index.html#github" class="footer__link">GitHub</a></li>
+            </ul>
+            <ul class="footer__social">
+                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
+            </ul>
+            <span class="footer__copy">&#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top"><i class="fas fa-arrow-up scrollup__icon"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
