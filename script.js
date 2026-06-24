@@ -122,14 +122,35 @@ const modal = document.getElementById('resume-modal');
 const openBtn = document.getElementById('open-resume');
 const openBtnFooter = document.querySelector('.open-resume-footer');
 const closeBtn = document.querySelector('.close-modal');
+const resumeIframe = document.getElementById('resume-iframe');
+const resumeFallback = document.getElementById('resume-fallback');
 
 function openModal(e) {
     if(e) e.preventDefault();
-    modal.classList.add('show-modal');
+    if(modal) {
+        // Check if browser supports inline PDF viewing
+        const supportsPdf = (typeof navigator.pdfViewerEnabled !== 'undefined') ? navigator.pdfViewerEnabled : !/Mobi|Android/i.test(navigator.userAgent);
+        
+        if (supportsPdf) {
+            if (resumeIframe) {
+                resumeIframe.src = "assets/resume/Mohammed_Kabeer_Resume.pdf";
+                resumeIframe.style.display = 'block';
+            }
+            if (resumeFallback) resumeFallback.style.display = 'none';
+        } else {
+            if (resumeIframe) {
+                resumeIframe.src = '';
+                resumeIframe.style.display = 'none';
+            }
+            if (resumeFallback) resumeFallback.style.display = 'block';
+        }
+        modal.classList.add('show-modal');
+    }
 }
 
 function closeModal() {
     if(modal) modal.classList.remove('show-modal');
+    if(resumeIframe) resumeIframe.src = '';
 }
 
 if(openBtn) openBtn.addEventListener('click', openModal);
@@ -170,6 +191,8 @@ function openCertModal(e) {
         certIframe.src = '';
         certIframe.style.display = 'none';
         certFallback.style.display = 'block';
+        const viewNewTabBtn = document.getElementById('view-new-tab');
+        if (viewNewTabBtn) viewNewTabBtn.href = certPath;
     }
     
     certModal.classList.add('show-modal');

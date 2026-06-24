@@ -73,10 +73,19 @@
             <h2>Resume Preview</h2>
             <div class="pdf-container">
                 <iframe
+                    id="resume-iframe"
                     src="assets/resume/Mohammed_Kabeer_Resume.pdf"
                     width="100%"
-                    height="600">
+                    height="600"
+                    style="border: none; display: block;">
                 </iframe>
+                <div id="resume-fallback" style="display: none; padding: 3rem 1.5rem; text-align: center; color: var(--text-color);">
+                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable on mobile.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">You can view the resume directly in a new tab or download it below.</p>
+                    <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" target="_blank" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
+                </div>
             </div>
             <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" class="btn btn-primary mt-1" download>
                 Download Resume
@@ -92,8 +101,11 @@
             <div class="pdf-container">
                 <iframe id="cert-iframe" src="" width="100%" height="600" style="border: none; display: block;"></iframe>
                 <div id="cert-fallback" style="display: none; padding: 3rem 1.5rem; text-align: center; color: var(--text-color);">
-                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable.</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0;">Click below to download and view the certificate.</p>
+                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable on mobile.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">You can view the certificate directly in a new tab or download it below.</p>
+                    <a href="#" id="view-new-tab" target="_blank" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <i class="fas fa-external-link-alt"></i> Open in New Tab
+                    </a>
                 </div>
             </div>
             <a href="#" id="download-cert" class="btn btn-primary mt-1" download>
@@ -371,7 +383,7 @@
                     </article>
 
                     <!-- Project 4 -->
-                    <article class="projects__card glass-card hover-glow project-item hidden-project" data-category="web" data-aos="zoom-in">
+                    <article class="projects__card glass-card hover-glow project-item" data-category="web" data-aos="zoom-in">
                         <a href="project-portfolio.html" class="project-card__link">
                             <div class="projects__image">
                                 <img src="assets/images/project3.png" alt="Portfolio Website" class="projects__img" loading="lazy">
