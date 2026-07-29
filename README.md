@@ -114,7 +114,7 @@ screenshots/projects.png
 
 **Mohammed Kabeer**
 
-📧 Email: your-email@example.com
+📧 Email:mohammedkabeermattesabannavar@gmail.com
 
 💼 LinkedIn:
 https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373
