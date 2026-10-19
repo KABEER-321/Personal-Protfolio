@@ -3,71 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Bug Solver | Mohammed Kabeer</title>
-    <meta name="description" content="AI Bug Solver - An AI-powered bug diagnosis and code debugging platform built with HTML, CSS, JS and Google Gemini API.">
+    <title>AI Bug Solver — Case Study | Mohammed Kabeer</title>
+    <meta name="description" content="Detailed case study of AI Bug Solver: an AI-powered code troubleshooting platform built with HTML, CSS, JavaScript, and Google Gemini API by Mohammed Kabeer.">
+    <link rel="canonical" href="https://kabeer-321.github.io/project-bugtracker.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='Georgia,serif' font-weight='bold' fill='%231D201D'>K<tspan fill='%232A5298'>.</tspan></text></svg>">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/aos/2.3.4/aos.css">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="project-page.css">
 </head>
-<body class="dark-theme">
+<body>
 
-    <!-- Scroll Progress Indicator -->
+    <!-- Reading Progress Indicator -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-bar"></div>
     </div>
 
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
-    <!-- Navigation -->
+    <!-- Navigation Header -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index.html" class="nav__logo">Kabeer<span>.</span></a>
+            <a href="index.html#home" class="nav__logo">Kabeer<span>.</span></a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
-                    <li class="nav__item"><a href="index.html#github" class="nav__link">GitHub</a></li>
-                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#projects" class="nav__link active-link">Projects</a></li>
+                    <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+                    <li><a href="index.html#education" class="nav__link">Education</a></li>
+                    <li><a href="index.html#github" class="nav__link">GitHub</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+                <div class="nav__close" id="nav-close" aria-label="Close menu"><i class="fas fa-times"></i></div>
             </div>
-            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+            <div class="nav__actions">
+                <a href="index.html#projects" class="btn btn-outline btn-sm">
+                    <i class="fas fa-arrow-left"></i> All Projects
+                </a>
+                <div class="nav__toggle" id="nav-toggle" aria-label="Open menu"><i class="fas fa-bars"></i></div>
+            </div>
         </nav>
     </header>
 
     <main class="main">
 
-        <!-- Project Hero -->
+        <!-- Case Study Hero -->
         <section class="project-hero">
             <div class="container">
-                <a href="index.html#projects" class="project-hero__back" data-aos="fade-right">
+                <a href="index.html#projects" class="project-hero__back">
                     <i class="fas fa-arrow-left"></i> Back to Projects
                 </a>
-                <div class="project-hero__content" data-aos="fade-up">
-                    <span class="project-hero__label">Featured Project</span>
+                <div class="project-hero__content">
+                    <span class="project-hero__label">Developer Utility</span>
                     <h1 class="project-hero__title">AI Bug Solver</h1>
-                    <p class="project-hero__subtitle">AI-Powered Bug Diagnosis & Code Debugging Platform</p>
+                    <p class="project-hero__subtitle">AI-Powered Bug Diagnosis & Code Debugging Assistant powered by Google Gemini API</p>
                     <div class="project-hero__tags">
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">JavaScript (ES6+)</span>
                         <span class="tag">HTML5</span>
                         <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Gemini API</span>
-                        <span class="tag">Glassmorphism</span>
+                        <span class="tag">Netlify</span>
                     </div>
                     <div class="project-hero__actions">
-                        <a href="https://ai-bug-solver.netlify.app/" target="_blank" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="https://github.com/KABEER-321/ai-bug-tracker" target="_blank" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://ai-bug-solver.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Launch Live Demo
+                        </a>
+                        <a href="https://github.com/KABEER-321/ai-bug-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
                     </div>
                 </div>
-                <div class="project-hero__image" data-aos="fade-left">
-                    <img src="assets/images/bugsolver-hero.png" alt="AI Bug Solver" class="project-hero__img">
+                <div class="project-hero__image">
+                    <img src="assets/images/bugsolver/bs-solution.png" alt="AI Bug Solver real diagnostic output screenshot" class="project-hero__img">
                 </div>
             </div>
         </section>
@@ -75,166 +89,185 @@
         <!-- Project Overview -->
         <section class="project-section">
             <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Project Overview</h2>
-                <div class="project-overview glass-card hover-glow" data-aos="fade-up">
-                    <p>AI Bug Solver is an intelligent code debugging assistant designed to streamline developer troubleshooting workflows. By submitting bug reports, error stack traces, and buggy code snippets, the platform utilizes Google's Gemini AI to instantly analyze code defects, detect syntax errors, generate step-by-step explanations, and output clean, corrected code ready to be integrated.</p>
+                <div class="section__header">
+                    <span class="section__eyebrow">Overview</span>
+                    <h2 class="section__title">Executive Summary</h2>
+                </div>
+                <div class="project-overview">
+                    <p>
+                        <strong>AI Bug Solver</strong> is a lightweight web application designed to help developers quickly understand and resolve code errors. When developers paste cryptic error logs, stack traces, and snippets of broken code, the application coordinates with the Google Gemini API to pinpoint root causes, explain the underlying logic failure, and provide clean, annotated code corrections.
+                    </p>
+                    <p>
+                        Built as a responsive client-side application, it focuses on fast feedback loops, clear Markdown rendering, and structured explanations that educate developers on why an error occurred rather than just providing an unexplained snippet.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Statement -->
+        <!-- Problem Statement & Solution -->
         <section class="project-section">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Problem Statement</h2>
-                <div class="project-problem glass-card hover-glow" data-aos="fade-up">
-                    <div class="project-problem__icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="container grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+                <div class="project-problem">
+                    <div class="project-problem__icon"><i class="fas fa-exclamation-circle"></i></div>
                     <div class="project-problem__content">
-                        <p>Software debugging is a major bottleneck in developer productivity. When developers encounter cryptic error messages or complex logical bugs, they spend hours querying search engines, browsing forums, or parsing thick documentation. Generic results rarely address specific user code contexts, leading to slower resolution rates and higher developer frustration.</p>
+                        <h3>The Problem</h3>
+                        <p>Junior engineers and students spend countless hours sifting through StackOverflow threads and outdated documentation trying to decipher cryptic compiler warnings and runtime exceptions. Generic search results frequently fail to address the specific context of their custom code.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Solution Approach -->
-        <section class="project-section">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Solution Approach</h2>
-                <div class="project-solution glass-card hover-glow" data-aos="fade-up">
+                <div class="project-solution">
                     <div class="project-solution__icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="project-solution__content">
-                        <p>AI Bug Solver bypasses manual forum searches by directly bringing Gemini-powered intelligence to the developer's workspace. When a user submits a bug report, the system coordinates with the Google Gemini API using structured prompts. The AI inspects syntax, identifies logical exceptions, generates a sequential roadmap of fixes, and formats the output into clean, step-by-step debugging steps alongside syntax-highlighted code blocks.</p>
+                        <h3>The Engineering Solution</h3>
+                        <p>AI Bug Solver provides an isolated troubleshooting environment where developers provide their buggy snippet and error context together. The Gemini API analyzes the AST structure and logic flow, returning a prioritized breakdown of fixes with inline code commentary.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Key Features -->
+        <!-- Key Features Grid -->
         <section class="project-section">
             <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Key Features</h2>
+                <div class="section__header">
+                    <span class="section__eyebrow">Capabilities</span>
+                    <h2 class="section__title">Key Implemented Features</h2>
+                </div>
                 <div class="project-features__grid">
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-file-code"></i></div>
-                        <h3>Bug Submission Form</h3>
-                        <p>Allows users to easily submit bug reports with title context and detailed buggy code blocks.</p>
+                        <h3>Context-Aware Bug Submission</h3>
+                        <p>Inputs for error messages, stack trace logs, and code snippets allowing multi-faceted diagnostic context.</p>
                     </div>
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-brain"></i></div>
-                        <h3>Gemini AI Analysis</h3>
-                        <p>Harnesses Google Gemini AI to analyze raw debugging questions and detect underlying defects instantly.</p>
+                        <h3>Gemini LLM Diagnostics</h3>
+                        <p>Structured prompting coordinates with Google Gemini to identify logic bugs, missing dependencies, and syntax flaws.</p>
                     </div>
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-magic"></i></div>
-                        <h3>Auto-Code Correction</h3>
-                        <p>Generates clean, corrected code suggestions ready to copy-paste directly back into IDEs.</p>
+                        <h3>Annotated Code Corrections</h3>
+                        <p>Generates clean, drop-in replacement code with clear comments highlighting exactly what was changed and why.</p>
                     </div>
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-list-ol"></i></div>
-                        <h3>Step-by-Step Fixes</h3>
-                        <p>Breaks down complex debugging paths into readable, sequential steps so developers learn from their mistakes.</p>
+                        <h3>Sequential Fix Breakdown</h3>
+                        <p>Provides a step-by-step remediation guide explaining underlying concepts to reinforce software engineering principles.</p>
                     </div>
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
+
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-globe"></i></div>
-                        <h3>Language Independent</h3>
-                        <p>Supports syntax error detection and logical code audits for a wide variety of programming languages.</p>
+                        <h3>Multi-Language Support</h3>
+                        <p>Engineered to inspect code across Python, JavaScript, C, C++, and Java without requiring language-specific compilers.</p>
                     </div>
-                    <div class="feature-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="350">
+
+                    <div class="feature-card">
                         <div class="feature-card__icon"><i class="fas fa-history"></i></div>
-                        <h3>Bug History Tracking</h3>
-                        <p>Keeps logs of previously submitted bug reports and their AI solutions for future reference.</p>
+                        <h3>Session History Logs</h3>
+                        <p>Maintains a local log of previous debugging sessions so developers can revisit earlier solutions during work sessions.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tech Stack -->
+        <!-- Technology Stack -->
         <section class="project-section">
             <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Technology Stack</h2>
+                <div class="section__header">
+                    <span class="section__eyebrow">Technologies</span>
+                    <h2 class="section__title">Technology Stack</h2>
+                </div>
                 <div class="tech-stack__grid">
-                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-card">
                         <i class="fab fa-html5"></i>
                         <span>HTML5</span>
                     </div>
-                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="tech-card">
                         <i class="fab fa-css3-alt"></i>
                         <span>CSS3</span>
                     </div>
-                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-card">
                         <i class="fab fa-js-square"></i>
-                        <span>JavaScript</span>
+                        <span>JavaScript (ES6+)</span>
                     </div>
-                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="tech-card">
                         <i class="fas fa-brain"></i>
-                        <span>Gemini API</span>
+                        <span>Google Gemini API</span>
                     </div>
-                    <div class="tech-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300">
-                        <i class="fas fa-palette"></i>
-                        <span>Glassmorphism</span>
+                    <div class="tech-card">
+                        <i class="fas fa-cloud"></i>
+                        <span>Netlify Hosting</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- System Screenshots Gallery -->
-        <section class="project-section">
+        <section class="project-section" id="screenshots">
             <div class="container">
-                <h2 class="section__title" data-aos="fade-up">System Screenshots</h2>
+                <div class="section__header">
+                    <span class="section__eyebrow">Application Evidence</span>
+                    <h2 class="section__title">System Screenshots</h2>
+                    <p class="section__subtitle">Direct interface captures from the deployed application. Click any screenshot to enlarge.</p>
+                </div>
+
                 <div class="screenshots__grid">
                     
                     <!-- Screenshot 1 -->
-                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="screenshot-card">
                         <div class="screenshot-img__wrapper">
-                            <img src="assets/images/bugsolver/bs-main.png" alt="Main Bug Submission Page" class="screenshot-img">
+                            <img src="assets/images/bugsolver/bs-main.png" alt="AI Bug Solver Main Submission Portal" class="screenshot-img" loading="lazy">
                             <div class="screenshot-hover__overlay">
                                 <i class="fas fa-expand"></i>
                             </div>
                         </div>
                         <div class="screenshot-info">
-                            <h3>Main Bug Submission Page</h3>
-                            <p>Clean, cyberpunk-themed submission portal with inputs for bug title and detailed descriptions.</p>
+                            <h3>Main Bug Submission Portal</h3>
+                            <p>Primary input form accepting error title, programming language tags, and multi-line code blocks.</p>
                         </div>
                     </div>
 
                     <!-- Screenshot 2 -->
-                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="150">
+                    <div class="screenshot-card">
                         <div class="screenshot-img__wrapper">
-                            <img src="assets/images/bugsolver/bs-filled.png" alt="Bug Report Form Filled" class="screenshot-img">
+                            <img src="assets/images/bugsolver/bs-filled.png" alt="Populated Bug Report Form" class="screenshot-img" loading="lazy">
                             <div class="screenshot-hover__overlay">
                                 <i class="fas fa-expand"></i>
                             </div>
                         </div>
                         <div class="screenshot-info">
-                            <h3>Bug Report Form Filled</h3>
-                            <p>Bug submission form filled with sample C programming code containing common compilation and syntax errors.</p>
+                            <h3>Bug Report Form in Action</h3>
+                            <p>Demonstrating input with sample code containing common compilation faults and syntax errors.</p>
                         </div>
                     </div>
 
                     <!-- Screenshot 3 -->
-                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="screenshot-card">
                         <div class="screenshot-img__wrapper">
-                            <img src="assets/images/bugsolver/bs-solution.png" alt="AI-Generated Solution Output" class="screenshot-img">
+                            <img src="assets/images/bugsolver/bs-solution.png" alt="AI Generated Diagnostic Output" class="screenshot-img" loading="lazy">
                             <div class="screenshot-hover__overlay">
                                 <i class="fas fa-expand"></i>
                             </div>
                         </div>
                         <div class="screenshot-info">
-                            <h3>AI-Generated Solution Output</h3>
-                            <p>Detailed analysis listing specific fixes and offering a complete, corrected code block with inline comments.</p>
+                            <h3>AI Diagnostic Output</h3>
+                            <p>Formatted response showing numbered root-cause explanations and a copyable, corrected code block.</p>
                         </div>
                     </div>
 
                     <!-- Screenshot 4 -->
-                    <div class="screenshot-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="250">
+                    <div class="screenshot-card">
                         <div class="screenshot-img__wrapper">
-                            <img src="assets/images/bugsolver/bs-history.png" alt="Bug History Listing Page" class="screenshot-img">
+                            <img src="assets/images/bugsolver/bs-history.png" alt="Bug History Tracking Page" class="screenshot-img" loading="lazy">
                             <div class="screenshot-hover__overlay">
                                 <i class="fas fa-expand"></i>
                             </div>
                         </div>
                         <div class="screenshot-info">
-                            <h3>Bug History Listing Page</h3>
-                            <p>Dynamic logs tracking previously reported bugs, allowing developers to review their resolved statuses.</p>
+                            <h3>Session History Log</h3>
+                            <p>Persistent list of diagnosed bugs enabling developers to review past inquiries and solutions.</p>
                         </div>
                     </div>
 
@@ -242,86 +275,44 @@
             </div>
         </section>
 
-        <!-- Challenges & Solutions -->
+        <!-- Engineering Challenges & Solutions -->
         <section class="project-section">
             <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Challenges & Solutions</h2>
+                <div class="section__header">
+                    <span class="section__eyebrow">Engineering Insights</span>
+                    <h2 class="section__title">Challenges & Solutions</h2>
+                </div>
                 <div class="challenges__grid">
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+                    <div class="challenge-card">
                         <div class="challenge-card__header">
                             <span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span>
                         </div>
-                        <h3>AI Response Formatting</h3>
-                        <p>Converting raw markdown text and blocks from Gemini API into organized, structured step-by-step lists that are easy for developers to parse.</p>
+                        <h3>Unstructured LLM Output Formatting</h3>
+                        <p>Raw text returned by language models can vary wildly in structure, often mixing markdown headings, unescaped backticks, and inconsistent prose.</p>
                     </div>
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+
+                    <div class="challenge-card">
                         <div class="challenge-card__header">
                             <span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span>
                         </div>
-                        <h3>Structured Regex & Parsing</h3>
-                        <p>Implemented robust regex filters and markdown converters in JavaScript to isolate code snippets, bolding technical headers, and separating suggestions.</p>
+                        <h3>System Prompt Structuring & Regex Parsing</h3>
+                        <p>Defined a strict system instruction prompting the model to reply in structured JSON/delimited blocks, then used client-side regex parsing to format clean code blocks and lists.</p>
                     </div>
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-right">
+
+                    <div class="challenge-card">
                         <div class="challenge-card__header">
                             <span class="challenge-label challenge"><i class="fas fa-bolt"></i> Challenge</span>
                         </div>
-                        <h3>Asynchronous Request Management</h3>
-                        <p>Gemini AI analysis takes time, and slow responses could cause users to double-submit or assume the webpage crashed.</p>
+                        <h3>Asynchronous Request Latency & User Feedback</h3>
+                        <p>AI generation can take several seconds. Without proper status feedback, users frequently believe the application has stalled or re-submit queries.</p>
                     </div>
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-left">
+
+                    <div class="challenge-card">
                         <div class="challenge-card__header">
                             <span class="challenge-label solution"><i class="fas fa-check-circle"></i> Solution</span>
                         </div>
-                        <h3>Skeleton Loading States</h3>
-                        <p>Integrated disabled state triggers on submit buttons combined with smooth, glowing CSS loaders, visually guiding users during API waits.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results & Impact -->
-        <section class="project-section">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Results & Impact</h2>
-                <div class="results__grid">
-                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="result-card__number">AI</div>
-                        <div class="result-card__label">Powered Solutions</div>
-                    </div>
-                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="result-card__number">Real-Time</div>
-                        <div class="result-card__label">Instant Diagnostics</div>
-                    </div>
-                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="result-card__number">Gemini</div>
-                        <div class="result-card__label">API Integration</div>
-                    </div>
-                    <div class="result-card glass-card hover-glow" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="result-card__number">100%</div>
-                        <div class="result-card__label">Responsive Design</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Future Enhancements -->
-        <section class="project-section">
-            <div class="container">
-                <h2 class="section__title" data-aos="fade-up">Future Enhancements</h2>
-                <div class="challenges__grid">
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
-                        <div class="challenge-card__header">
-                            <span class="challenge-label solution"><i class="fas fa-plug"></i> Integration</span>
-                        </div>
-                        <h3>IDE Extension Integration</h3>
-                        <p>Developing extensions for VS Code and JetBrains IDEs to let developers highlight code errors and solve them with a hotkey directly in their editor.</p>
-                    </div>
-                    <div class="challenge-card glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
-                        <div class="challenge-card__header">
-                            <span class="challenge-label solution"><i class="fas fa-folder-open"></i> Uploads</span>
-                        </div>
-                        <h3>Multi-File Context Analysis</h3>
-                        <p>Enabling users to upload multiple files or link GitHub repositories to resolve cross-file dependencies and imports.</p>
+                        <h3>Defensive UI States & Loading Spinners</h3>
+                        <p>Added instant button disablement upon form submission, an animated progress indicator, and safe timeout handling to inform users of diagnostic progress.</p>
                     </div>
                 </div>
             </div>
@@ -330,29 +321,33 @@
         <!-- Project Links (Bottom CTA) -->
         <section class="project-section text-center">
             <div class="container">
-                <div class="project-cta glass-card hover-glow" data-aos="zoom-in">
-                    <h3 class="project-cta__title">Ready to Diagnose Code Errors?</h3>
-                    <p class="project-cta__desc">Explore the repository on GitHub or view the live application to test AI Bug Solver in real-time.</p>
-                    <div class="project-hero__actions justify-center" style="margin-top: 1.5rem;">
-                        <a href="https://ai-bug-solver.netlify.app/" target="_blank" class="btn btn-primary glow-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="https://github.com/KABEER-321/ai-bug-tracker" target="_blank" class="btn btn-outline glow-btn-outline"><i class="fab fa-github"></i> Source Code</a>
+                <div class="project-cta">
+                    <h3 class="project-cta__title">Test the Live Application</h3>
+                    <p class="project-cta__desc">Try diagnosing a sample code snippet or review the open-source repository on GitHub.</p>
+                    <div class="project-hero__actions justify-center" style="margin-top: 1rem;">
+                        <a href="https://ai-bug-solver.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i> Open Live Application
+                        </a>
+                        <a href="https://github.com/KABEER-321/ai-bug-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i class="fab fa-github"></i> GitHub Repository
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Project Navigation -->
+        <!-- Case Study Navigation -->
         <section class="project-section project-nav-section">
             <div class="container">
                 <div class="project-nav">
-                    <a href="project-smartcampus.html" class="project-nav__link prev glass-card hover-glow">
+                    <a href="project-smartcampus.html" class="project-nav__link prev">
                         <i class="fas fa-arrow-left"></i>
                         <div>
                             <span class="project-nav__label">Previous Project</span>
                             <span class="project-nav__name">SmartCampus ERP</span>
                         </div>
                     </a>
-                    <a href="project-portfolio.html" class="project-nav__link next glass-card hover-glow">
+                    <a href="project-portfolio.html" class="project-nav__link next">
                         <div>
                             <span class="project-nav__label">Next Project</span>
                             <span class="project-nav__name">Personal Portfolio</span>
@@ -368,34 +363,50 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container container">
-            <h1 class="footer__title">Kabeer<span>.</span></h1>
-            <ul class="footer__list">
-                <li><a href="index.html#about" class="footer__link">About</a></li>
-                <li><a href="index.html#projects" class="footer__link">Projects</a></li>
-                <li><a href="index.html#github" class="footer__link">GitHub</a></li>
-            </ul>
-            <ul class="footer__social">
-                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
-            </ul>
-            <span class="footer__copy">&#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+            <div class="footer__top">
+                <div class="footer__brand">
+                    Mohammed Kabeer<span>.</span>
+                </div>
+                <ul class="footer__links">
+                    <li><a href="index.html#about" class="footer__link">About</a></li>
+                    <li><a href="index.html#projects" class="footer__link">Projects</a></li>
+                    <li><a href="index.html#skills" class="footer__link">Skills</a></li>
+                    <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+                </ul>
+                <div class="footer__social">
+                    <a href="https://github.com/KABEER-321" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:mdkabeermm786786@gmail.com" class="footer__social-link" aria-label="Email Me">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>&copy; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar.</span>
+                <span>AI Bug Solver Case Study</span>
+            </div>
         </div>
     </footer>
 
     <!-- Lightbox Modal -->
     <div id="lightbox-modal" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Enlarged Screenshot">
-        <div id="lightbox-caption" class="lightbox-caption"></div>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-img" id="lightbox-img" alt="Enlarged Screenshot">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
     </div>
 
     <!-- Scroll Up -->
-    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top"><i class="fas fa-arrow-up scrollup__icon"></i></a>
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top of page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>

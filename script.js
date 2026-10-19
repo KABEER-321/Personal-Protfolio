@@ -1,559 +1,466 @@
-/* ================= ON LOAD ACTIONS ================= */
-window.addEventListener('load', () => {
-    // 1. Hide Loader
-    const loader = document.getElementById('loader');
-    setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.visibility = 'hidden', 600);
-    }, 1500);
+/**
+ * MOHAMMED KABEER — PERSONAL DEVELOPER PORTFOLIO
+ * Modular Vanilla JavaScript (ES6+)
+ * 
+ * Modules:
+ * 1. Mobile Navigation & Scroll Header
+ * 2. Reading Progress Indicator
+ * 3. Section Scrollspy
+ * 4. Project Category Filtering
+ * 5. GitHub Repositories REST Integration
+ * 6. PDF Modals (Resume & Certifications with Mobile Fallback)
+ * 7. FormSubmit AJAX Contact Form
+ * 8. Screenshot Lightbox Modal
+ * 9. Scroll to Top & Current Year
+ */
 
-    // 2. Initialize AOS Animations
-    if(typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 20,
-            disable: 'mobile' // Disable scroll animations on mobile devices for smooth performance
-        });
-    }
-
-
-    // 4. Fetch GitHub Repos
-    fetchGitHubRepos();
-});
-
-/* ================= SCROLL PROGRESS BAR ================= */
-window.addEventListener('scroll', () => {
-    const scrollBar = document.getElementById('scroll-bar');
-    const scrollTotal = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercentage = (scrollTotal / height) * 100;
-    scrollBar.style.width = scrollPercentage + '%';
-});
-
-/* ================= HEADER BACKGROUND & NAV ================= */
-function scrollHeader() {
-    const header = document.getElementById('header');
-    if(this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header');
-}
-window.addEventListener('scroll', scrollHeader);
-
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close'),
-      navLinks = document.querySelectorAll('.nav__link');
-
-if(navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
-if(navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
-navLinks.forEach(n => n.addEventListener('click', () => navMenu.classList.remove('show-menu')));
-
-/* ================= SCROLL ACTIVE LINK ================= */
-const sections = document.querySelectorAll('section[id]');
-function scrollActive() {
-    const scrollY = window.pageYOffset;
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 100,
-              sectionId = current.getAttribute('id');
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
-        } else {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
-        }
-    });
-}
-window.addEventListener('scroll', scrollActive);
-
-/* ================= TYPING EFFECT ================= */
-const typingText = document.querySelector('.typing-text');
-const words = ["Full-Stack Developer", "Python Developer", "AI Enthusiast", "Open Source Learner"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    if(!typingText) return;
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500;
-    }
-
-    setTimeout(typeEffect, typeSpeed);
-}
-setTimeout(typeEffect, 2000);
-
-/* ================= ANIMATE SKILL BARS ON SCROLL ================= */
-const skillSection = document.getElementById('skills');
-const progressBars = document.querySelectorAll('.skill__percentage');
-
-function showSkills() {
-    if(!skillSection) return;
-    const sectionPos = skillSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight / 1.2;
-
-    if(sectionPos < screenPos) {
-        progressBars.forEach(bar => {
-            const width = bar.getAttribute('data-width');
-            bar.style.width = width;
-        });
-        window.removeEventListener('scroll', showSkills); // Trigger only once
-    }
-}
-window.addEventListener('scroll', showSkills);
-
-/* ================= RESUME MODAL ================= */
-const modal = document.getElementById('resume-modal');
-const openBtn = document.getElementById('open-resume');
-const openBtnFooter = document.querySelector('.open-resume-footer');
-const closeBtn = document.querySelector('.close-modal');
-const resumeIframe = document.getElementById('resume-iframe');
-const resumeFallback = document.getElementById('resume-fallback');
-
-function openModal(e) {
-    if(e) e.preventDefault();
-    if(modal) {
-        // Check if browser supports inline PDF viewing
-        const supportsPdf = (typeof navigator.pdfViewerEnabled !== 'undefined') ? navigator.pdfViewerEnabled : !/Mobi|Android/i.test(navigator.userAgent);
-        
-        if (supportsPdf) {
-            if (resumeIframe) {
-                resumeIframe.src = "assets/resume/Mohammed_Kabeer_Resume.pdf";
-                resumeIframe.style.display = 'block';
-            }
-            if (resumeFallback) resumeFallback.style.display = 'none';
-        } else {
-            if (resumeIframe) {
-                resumeIframe.src = '';
-                resumeIframe.style.display = 'none';
-            }
-            if (resumeFallback) resumeFallback.style.display = 'block';
-        }
-        modal.classList.add('show-modal');
-    }
-}
-
-function closeModal() {
-    if(modal) modal.classList.remove('show-modal');
-    if(resumeIframe) resumeIframe.src = '';
-}
-
-if(openBtn) openBtn.addEventListener('click', openModal);
-if(openBtnFooter) openBtnFooter.addEventListener('click', openModal);
-if(closeBtn) closeBtn.addEventListener('click', closeModal);
-window.addEventListener('click', (e) => {
-    if(modal && e.target == modal) closeModal();
-});
-
-/* ================= CERTIFICATE MODAL ================= */
-const certModal = document.getElementById('cert-modal');
-const openCertBtns = document.querySelectorAll('.open-cert-btn');
-const closeCertBtn = certModal ? certModal.querySelector('.close-modal') : null;
-const certIframe = document.getElementById('cert-iframe');
-const certFallback = document.getElementById('cert-fallback');
-const certTitle = document.getElementById('cert-modal-title');
-const downloadCertBtn = document.getElementById('download-cert');
-
-function openCertModal(e) {
-    if (e) e.preventDefault();
-    if (!certModal || !certIframe || !certFallback || !certTitle || !downloadCertBtn) return;
-    
-    const btn = e.currentTarget;
-    const certPath = btn.getAttribute('data-cert');
-    const title = btn.getAttribute('data-title');
-    
-    certTitle.textContent = title;
-    downloadCertBtn.href = certPath;
-    
-    // Check if browser supports inline PDF viewing
-    const supportsPdf = (typeof navigator.pdfViewerEnabled !== 'undefined') ? navigator.pdfViewerEnabled : !/Mobi|Android/i.test(navigator.userAgent);
-    
-    if (supportsPdf) {
-        certIframe.src = certPath;
-        certIframe.style.display = 'block';
-        certFallback.style.display = 'none';
-    } else {
-        certIframe.src = '';
-        certIframe.style.display = 'none';
-        certFallback.style.display = 'block';
-        const viewNewTabBtn = document.getElementById('view-new-tab');
-        if (viewNewTabBtn) viewNewTabBtn.href = certPath;
-    }
-    
-    certModal.classList.add('show-modal');
-}
-
-function closeCertModal() {
-    if (certModal) certModal.classList.remove('show-modal');
-    if (certIframe) certIframe.src = '';
-}
-
-if (openCertBtns.length > 0) {
-    openCertBtns.forEach(btn => {
-        btn.addEventListener('click', openCertModal);
-    });
-}
-
-if (closeCertBtn) closeCertBtn.addEventListener('click', closeCertModal);
-
-window.addEventListener('click', (e) => {
-    if (certModal && e.target == certModal) closeCertModal();
-});
-
-// Support Escape key to close modals
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeModal();
-        closeCertModal();
-    }
-});
-
-/* ================= PROJECT FILTERING ================= */
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectItems = document.querySelectorAll('.project-item');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active-filter'));
-        // Add active class to clicked button
-        btn.classList.add('active-filter');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        let visibleCount = 0;
-
-        projectItems.forEach(item => {
-            const categories = item.getAttribute('data-category');
-            
-            if(filterValue === 'all' || categories.includes(filterValue)) {
-                item.classList.remove('hidden-project');
-                visibleCount++;
-            } else {
-                item.classList.add('hidden-project');
-            }
-        });
-    });
-});
-
-/* ================= FETCH GITHUB REPOS ================= */
-async function fetchGitHubRepos() {
-    const container = document.getElementById('repo-container');
-    if(!container) return;
-
-    try {
-        const response = await fetch('https://api.github.com/users/KABEER-321/repos?sort=updated&per_page=6');
-        if(!response.ok) throw new Error('Network response was not ok');
-        
-        const repos = await response.json();
-        container.innerHTML = ''; // Clear loading text
-
-        repos.forEach(repo => {
-            if(repo.fork) return; // Skip forks if desired
-            
-            const repoEl = document.createElement('div');
-            repoEl.classList.add('repo-card', 'glass-card', 'hover-glow');
-            repoEl.innerHTML = `
-                <h4 class="repo-title">
-                    <i class="far fa-folder-open"></i> 
-                    <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-                </h4>
-                <p class="repo-desc">${repo.description || 'No description available.'}</p>
-                <div class="repo-stats">
-                    ${repo.language ? `<span><i class="fas fa-circle" style="color: var(--first-color); font-size: 8px;"></i> ${repo.language}</span>` : ''}
-                    <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
-                    <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-                </div>
-            `;
-            container.appendChild(repoEl);
-        });
-    } catch (error) {
-        console.error('Error fetching GitHub repos:', error);
-        container.innerHTML = `<div class="text-center w-100">Unable to load repositories at this time.</div>`;
-    }
-}
-
-/* ================= CONTACT FORM VALIDATION & SUBMISSION ================= */
-const contactForm = document.getElementById('contact-form');
-const formMessage = document.getElementById('form-message');
-
-if(contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const name = document.getElementById('contact-name').value.trim();
-        const email = document.getElementById('contact-email').value.trim();
-        const subject = document.getElementById('contact-subject').value.trim();
-        const message = document.getElementById('contact-project').value.trim();
-        const honey = contactForm.querySelector('input[name="_honey"]').value;
-
-        // Simple Regex for email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if(!emailRegex.test(email)) {
-            formMessage.textContent = 'Please enter a valid email address.';
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
-            return;
-        }
-
-        if(name.length < 2 || message.length < 5 || subject.length < 2) {
-            formMessage.textContent = 'Please fill out all fields properly.';
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
-            return;
-        }
-
-        // Send to FormSubmit via AJAX
-        const btn = contactForm.querySelector('button');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-        btn.disabled = true;
-
-        try {
-            const response = await fetch('https://formsubmit.co/ajax/mdkabeermm786786@gmail.com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message,
-                    _honey: honey,
-                    _captcha: false
-                })
-            });
-
-            const result = await response.json();
-
-            if(response.ok && result.success) {
-                formMessage.textContent = 'Message sent successfully! I will get back to you soon.';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                contactForm.reset();
-            } else {
-                throw new Error(result.message || 'Server error');
-            }
-        } catch (error) {
-            console.error('FormSubmit Error:', error);
-            formMessage.textContent = 'Oops! Something went wrong. Please try again later.';
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
-        } finally {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-
-            // Clear message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        }
-    });
-}
-
-/* ================= SCROLL UP & YEAR ================= */
-function scrollUp() {
-    const scrollUp = document.getElementById('scroll-up');
-    if(this.scrollY >= 350) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll');
-}
-window.addEventListener('scroll', scrollUp);
-
-const yearEl = document.getElementById('current-year');
-if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-/* ================= PARTICLES JS CONFIGURATION ================= */
-if (typeof particlesJS !== 'undefined') {
-    particlesJS('particles-js', {
-        "particles": {
-            "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#00f2fe" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.2, "random": false },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.1, "width": 1 },
-            "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": { "enable": true, "mode": "grab" },
-                "onclick": { "enable": true, "mode": "push" },
-                "resize": true
-            },
-            "modes": {
-                "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
-                "push": { "particles_nb": 3 }
-            }
-        },
-        "retina_detect": true
-    });
-}
-
-/* ================= LIGHTBOX FUNCTIONALITY ================= */
 document.addEventListener('DOMContentLoaded', () => {
-    const lightbox = document.getElementById('lightbox-modal');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const screenshotWrappers = document.querySelectorAll('.screenshot-img__wrapper');
-    const screenshotImgs = document.querySelectorAll('.screenshot-img');
 
-    if (lightbox && lightboxImg && closeBtn) {
-        // Helper function to show lightbox
-        const openLightbox = (img, parent) => {
-            lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
-            
-            if (parent) {
-                const title = parent.querySelector('h3') ? parent.querySelector('h3').textContent : '';
-                const desc = parent.querySelector('p') ? parent.querySelector('p').textContent : '';
-                lightboxCaption.innerHTML = `<strong>${title}</strong><br>${desc}`;
-            } else {
-                lightboxCaption.textContent = img.alt || '';
+    /* ==========================================================================
+       1. NAVIGATION & SCROLL HEADER
+       ========================================================================== */
+    const header = document.getElementById('header');
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    // Sticky Header Border & Elevation
+    const handleScrollHeader = () => {
+        if (!header) return;
+        if (window.scrollY >= 40) {
+            header.classList.add('scroll-header');
+        } else {
+            header.classList.remove('scroll-header');
+        }
+    };
+    window.addEventListener('scroll', handleScrollHeader, { passive: true });
+
+    // Mobile Menu Drawer Toggle
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.add('show-menu');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        });
+    }
+
+    const closeNavMenu = () => {
+        if (!navMenu) return;
+        navMenu.classList.remove('show-menu');
+        document.body.style.overflow = '';
+    };
+
+    if (navClose) {
+        navClose.addEventListener('click', closeNavMenu);
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeNavMenu);
+    });
+
+    /* ==========================================================================
+       2. READING PROGRESS INDICATOR
+       ========================================================================== */
+    const scrollBar = document.getElementById('scroll-bar');
+    const updateScrollProgress = () => {
+        if (!scrollBar) return;
+        const scrollTotal = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (height > 0) {
+            const scrollPercentage = (scrollTotal / height) * 100;
+            scrollBar.style.width = `${scrollPercentage}%`;
+        }
+    };
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    /* ==========================================================================
+       3. SECTION SCROLLSPY (ACTIVE LINK HIGHLIGHTING)
+       ========================================================================== */
+    const sections = document.querySelectorAll('section[id]');
+    const handleScrollspy = () => {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 120;
+            const sectionId = current.getAttribute('id');
+            const targetLink = document.querySelector(`.nav__menu a[href*="#${sectionId}"]`);
+
+            if (targetLink) {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    targetLink.classList.add('active-link');
+                } else {
+                    targetLink.classList.remove('active-link');
+                }
             }
-            
-            setTimeout(() => lightbox.classList.add('show'), 50);
-        };
+        });
+    };
+    window.addEventListener('scroll', handleScrollspy, { passive: true });
 
-        // Attach click handlers to wrappers if they exist, else directly to images
-        if (screenshotWrappers.length > 0) {
-            screenshotWrappers.forEach(wrapper => {
-                wrapper.style.cursor = 'pointer';
-                wrapper.addEventListener('click', () => {
-                    const img = wrapper.querySelector('.screenshot-img');
-                    if (img) {
-                        openLightbox(img, wrapper.closest('.screenshot-card'));
+    /* ==========================================================================
+       4. PROJECT CATEGORY FILTERING
+       ========================================================================== */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (filterBtns.length > 0 && projectItems.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active-filter'));
+                btn.classList.add('active-filter');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    const categories = item.getAttribute('data-category') || '';
+                    if (filterValue === 'all' || categories.split(' ').includes(filterValue)) {
+                        item.classList.remove('hidden-project');
+                    } else {
+                        item.classList.add('hidden-project');
                     }
                 });
             });
-        } else {
-            screenshotImgs.forEach(img => {
-                img.style.cursor = 'pointer';
-                img.addEventListener('click', () => {
-                    openLightbox(img, img.closest('.screenshot-card'));
-                });
+        });
+    }
+
+    /* ==========================================================================
+       5. GITHUB REPOSITORIES REST INTEGRATION
+       ========================================================================== */
+    const fetchGitHubRepos = async () => {
+        const repoContainer = document.getElementById('repo-container');
+        if (!repoContainer) return;
+
+        try {
+            const response = await fetch('https://api.github.com/users/KABEER-321/repos?sort=updated&per_page=6');
+            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+
+            const repos = await response.json();
+            repoContainer.innerHTML = '';
+
+            const validRepos = repos.filter(repo => !repo.fork);
+
+            if (validRepos.length === 0) {
+                repoContainer.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-size: var(--text-sm);">No public repositories found.</div>`;
+                return;
+            }
+
+            validRepos.forEach(repo => {
+                const item = document.createElement('div');
+                item.className = 'repo-item';
+
+                const topDiv = document.createElement('div');
+                const h4 = document.createElement('h4');
+                h4.className = 'repo-item-title';
+                
+                const icon = document.createElement('i');
+                icon.className = 'far fa-folder-open';
+                h4.appendChild(icon);
+
+                const a = document.createElement('a');
+                a.href = repo.html_url;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.textContent = repo.name;
+                h4.appendChild(document.createTextNode(' '));
+                h4.appendChild(a);
+
+                const desc = document.createElement('p');
+                desc.className = 'repo-item-desc';
+                desc.textContent = repo.description || 'Public repository on GitHub.';
+
+                topDiv.appendChild(h4);
+                topDiv.appendChild(desc);
+                item.appendChild(topDiv);
+
+                const stats = document.createElement('div');
+                stats.className = 'repo-item-stats';
+
+                if (repo.language) {
+                    const langSpan = document.createElement('span');
+                    const langDot = document.createElement('i');
+                    langDot.className = 'fas fa-circle';
+                    langDot.style.fontSize = '7px';
+                    langDot.style.color = 'var(--accent)';
+                    langSpan.appendChild(langDot);
+                    langSpan.appendChild(document.createTextNode(' ' + repo.language));
+                    stats.appendChild(langSpan);
+                }
+
+                const starSpan = document.createElement('span');
+                const starIcon = document.createElement('i');
+                starIcon.className = 'far fa-star';
+                starSpan.appendChild(starIcon);
+                starSpan.appendChild(document.createTextNode(' ' + repo.stargazers_count));
+                stats.appendChild(starSpan);
+
+                const forkSpan = document.createElement('span');
+                const forkIcon = document.createElement('i');
+                forkIcon.className = 'fas fa-code-branch';
+                forkSpan.appendChild(forkIcon);
+                forkSpan.appendChild(document.createTextNode(' ' + repo.forks_count));
+                stats.appendChild(forkSpan);
+
+                item.appendChild(stats);
+                repoContainer.appendChild(item);
             });
+        } catch (error) {
+            console.warn('Unable to load GitHub repositories:', error);
+            repoContainer.innerHTML = `
+                <div style="grid-column: 1 / -1; padding: 2rem; text-align: center; color: var(--text-muted); font-size: var(--text-sm); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface);">
+                    <p style="margin-bottom: 0.5rem;">Repository feed currently unavailable via GitHub API.</p>
+                    <a href="https://github.com/KABEER-321" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                        <i class="fab fa-github"></i> View Profile on GitHub
+                    </a>
+                </div>
+            `;
         }
+    };
+    fetchGitHubRepos();
+
+    /* ==========================================================================
+       6. PDF MODALS (RESUME & CERTIFICATES WITH MOBILE FALLBACK)
+       ========================================================================== */
+    const resumeModal = document.getElementById('resume-modal');
+    const openResumeBtn = document.getElementById('open-resume');
+    const openResumeNavBtn = document.getElementById('open-resume-nav');
+    const openResumeFooter = document.querySelector('.open-resume-footer');
+    const closeResumeBtn = document.getElementById('close-resume');
+    const resumeIframe = document.getElementById('resume-iframe');
+    const resumeFallback = document.getElementById('resume-fallback');
+
+    // Check if browser natively renders inline iframed PDFs
+    const checkPdfSupport = () => {
+        if (typeof navigator.pdfViewerEnabled !== 'undefined') {
+            return navigator.pdfViewerEnabled;
+        }
+        return !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    };
+
+    const openModalHelper = (modal, iframe, fallback, pdfUrl) => {
+        if (!modal) return;
+        const supportsPdf = checkPdfSupport();
+
+        if (supportsPdf) {
+            if (iframe) {
+                iframe.src = pdfUrl;
+                iframe.style.display = 'block';
+            }
+            if (fallback) fallback.style.display = 'none';
+        } else {
+            if (iframe) {
+                iframe.src = '';
+                iframe.style.display = 'none';
+            }
+            if (fallback) fallback.style.display = 'block';
+        }
+        modal.classList.add('show-modal');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModalHelper = (modal, iframe) => {
+        if (!modal) return;
+        modal.classList.remove('show-modal');
+        if (iframe) iframe.src = '';
+        document.body.style.overflow = '';
+    };
+
+    // Resume triggers
+    const triggerOpenResume = (e) => {
+        if (e) e.preventDefault();
+        openModalHelper(resumeModal, resumeIframe, resumeFallback, 'assets/resume/Mohammed_Kabeer_Resume.pdf');
+    };
+
+    if (openResumeBtn) openResumeBtn.addEventListener('click', triggerOpenResume);
+    if (openResumeNavBtn) openResumeNavBtn.addEventListener('click', triggerOpenResume);
+    if (openResumeFooter) openResumeFooter.addEventListener('click', triggerOpenResume);
+    if (closeResumeBtn) closeResumeBtn.addEventListener('click', () => closeModalHelper(resumeModal, resumeIframe));
+
+    // Certificate Modal
+    const certModal = document.getElementById('cert-modal');
+    const closeCertBtn = document.getElementById('close-cert');
+    const certIframe = document.getElementById('cert-iframe');
+    const certFallback = document.getElementById('cert-fallback');
+    const certModalTitle = document.getElementById('cert-modal-title');
+    const downloadCertBtn = document.getElementById('download-cert');
+    const viewNewTabBtn = document.getElementById('view-new-tab');
+    const openCertBtns = document.querySelectorAll('.open-cert-btn');
+
+    openCertBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const certPath = btn.getAttribute('data-cert');
+            const title = btn.getAttribute('data-title') || 'Certificate Preview';
+
+            if (certModalTitle) certModalTitle.textContent = title;
+            if (downloadCertBtn) downloadCertBtn.href = certPath;
+            if (viewNewTabBtn) viewNewTabBtn.href = certPath;
+
+            openModalHelper(certModal, certIframe, certFallback, certPath);
+        });
+    });
+
+    if (closeCertBtn) closeCertBtn.addEventListener('click', () => closeModalHelper(certModal, certIframe));
+
+    // Global Modal Backdrop & Escape Key Handlers
+    window.addEventListener('click', (e) => {
+        if (resumeModal && e.target === resumeModal) closeModalHelper(resumeModal, resumeIframe);
+        if (certModal && e.target === certModal) closeModalHelper(certModal, certIframe);
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModalHelper(resumeModal, resumeIframe);
+            closeModalHelper(certModal, certIframe);
+            closeNavMenu();
+        }
+    });
+
+    /* ==========================================================================
+       7. FORMSUBMIT AJAX CONTACT FORM
+       ========================================================================== */
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (contactForm && formMessage) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-project').value.trim();
+            const honeyInput = contactForm.querySelector('input[name="_honey"]');
+            const honey = honeyInput ? honeyInput.value : '';
+
+            // Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                return;
+            }
+
+            if (name.length < 2 || message.length < 5 || subject.length < 2) {
+                formMessage.textContent = 'Please complete all required fields.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                return;
+            }
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending Message... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/mdkabeermm786786@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        subject: subject,
+                        message: message,
+                        _honey: honey,
+                        _captcha: false
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && (result.success === 'true' || result.success === true || result.message)) {
+                    formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.message || 'Server responded with an error.');
+                }
+            } catch (err) {
+                console.error('Contact Form Submission Error:', err);
+                formMessage.textContent = 'Unable to send message right now. Please email directly at mdkabeermm786786@gmail.com.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+            } finally {
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 8000);
+            }
+        });
+    }
+
+    /* ==========================================================================
+       8. SCREENSHOT LIGHTBOX (CASE STUDY PAGES)
+       ========================================================================== */
+    const lightbox = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const screenshotWrappers = document.querySelectorAll('.screenshot-img__wrapper, .screenshot-card');
+
+    if (lightbox && lightboxImg) {
+        const openLightbox = (img, captionText) => {
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+            if (lightboxCaption) lightboxCaption.innerHTML = captionText || img.alt || '';
+            requestAnimationFrame(() => lightbox.classList.add('show'));
+            document.body.style.overflow = 'hidden';
+        };
 
         const closeLightbox = () => {
             lightbox.classList.remove('show');
             setTimeout(() => {
                 lightbox.style.display = 'none';
-            }, 300);
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 250);
         };
 
-        closeBtn.addEventListener('click', closeLightbox);
+        screenshotWrappers.forEach(wrapper => {
+            wrapper.style.cursor = 'pointer';
+            wrapper.addEventListener('click', () => {
+                const img = wrapper.querySelector('img');
+                if (!img) return;
+                const title = wrapper.querySelector('h3') ? wrapper.querySelector('h3').textContent : '';
+                const desc = wrapper.querySelector('p') ? wrapper.querySelector('p').textContent : '';
+                const caption = title ? `<strong>${title}</strong><br>${desc}` : img.alt;
+                openLightbox(img, caption);
+            });
+        });
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox || e.target === closeBtn) {
-                closeLightbox();
-            }
+            if (e.target === lightbox || e.target === lightboxClose) closeLightbox();
         });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.style.display === 'block') {
-                closeLightbox();
-            }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') closeLightbox();
         });
     }
-});
 
-/* ================= CUSTOM CURSOR IMPLEMENTATION ================= */
-document.addEventListener('DOMContentLoaded', () => {
-    // Only initialize custom cursor on non-touch devices
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches;
-    
-    if (!isTouchDevice) {
-        const cursorDot = document.createElement('div');
-        const cursorOutline = document.createElement('div');
-        cursorDot.className = 'cursor-dot';
-        cursorOutline.className = 'cursor-outline';
-        document.body.appendChild(cursorDot);
-        document.body.appendChild(cursorOutline);
+    /* ==========================================================================
+       9. SCROLL TO TOP & DYNAMIC COPYRIGHT YEAR
+       ========================================================================== */
+    const scrollUpBtn = document.getElementById('scroll-up');
+    const handleScrollUpBtn = () => {
+        if (!scrollUpBtn) return;
+        if (window.scrollY >= 350) {
+            scrollUpBtn.classList.add('show-scroll');
+        } else {
+            scrollUpBtn.classList.remove('show-scroll');
+        }
+    };
+    window.addEventListener('scroll', handleScrollUpBtn, { passive: true });
 
-        let mouseX = 0;
-        let mouseY = 0;
-        let outlineX = 0;
-        let outlineY = 0;
-        
-        let cursorVisible = false;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            if (!cursorVisible) {
-                cursorDot.style.opacity = '1';
-                cursorOutline.style.opacity = '1';
-                cursorVisible = true;
-            }
-            
-            cursorDot.style.left = `${mouseX}px`;
-            cursorDot.style.top = `${mouseY}px`;
-        });
-
-        // Smooth trailing effect using requestAnimationFrame
-        const animateOutline = () => {
-            const ease = 0.15;
-            outlineX += (mouseX - outlineX) * ease;
-            outlineY += (mouseY - outlineY) * ease;
-            
-            cursorOutline.style.left = `${outlineX}px`;
-            cursorOutline.style.top = `${outlineY}px`;
-            
-            requestAnimationFrame(animateOutline);
-        };
-        requestAnimationFrame(animateOutline);
-
-        // Hover animations
-        const updateInteractiveHover = () => {
-            const targets = document.querySelectorAll('a, button, .btn, .open-cert-btn, .screenshot-img__wrapper, .filter-btn, .projects__card');
-            targets.forEach(target => {
-                target.addEventListener('mouseenter', () => {
-                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                    cursorOutline.style.backgroundColor = 'rgba(0, 242, 254, 0.05)';
-                    cursorDot.style.transform = 'translate(-50%, -50%) scale(0)';
-                });
-                target.addEventListener('mouseleave', () => {
-                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-                    cursorOutline.style.backgroundColor = 'transparent';
-                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-                });
-            });
-        };
-        
-        updateInteractiveHover();
-        
-        // Re-run hover binds when project filtering happens
-        const filterBtnsList = document.querySelectorAll('.filter-btn');
-        filterBtnsList.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTimeout(updateInteractiveHover, 100);
-            });
-        });
-        
-        // Hide cursor when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursorDot.style.opacity = '0';
-            cursorOutline.style.opacity = '0';
-            cursorVisible = false;
-        });
+    const currentYearEl = document.getElementById('current-year');
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
     }
+
 });

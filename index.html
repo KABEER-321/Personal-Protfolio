@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Kabeer | Full-Stack Developer</title>
+    <title>Mohammed Kabeer | Computer Science Student & Developer</title>
     
-    <!-- SEO & Meta Tags -->
-    <meta name="description" content="Portfolio of Mohammed Kabeer Mattesabannavar, a Full-Stack Developer & AI Enthusiast specializing in Django, Flask, and REST APIs.">
-    <meta name="keywords" content="Mohammed Kabeer, Full-Stack Developer, AI Enthusiast, Django Developer, Python Developer, Web Development, Software Engineer">
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Portfolio of Mohammed Kabeer Mattesabannavar, final-year Computer Science student at SDMCET Dharwad. Building practical web applications with Python, Django, REST APIs, and Gemini integrations.">
+    <meta name="keywords" content="Mohammed Kabeer, SDMCET, Computer Science, Full-Stack Developer, Python, Django, Flask, SQLite, MySQL, REST APIs, Gemini AI">
     <meta name="author" content="Mohammed Kabeer Mattesabannavar">
     <link rel="canonical" href="https://kabeer-321.github.io/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='Georgia,serif' font-weight='bold' fill='%231D201D'>K<tspan fill='%232A5298'>.</tspan></text></svg>">
 
     <!-- OpenGraph Tags -->
-    <meta property="og:title" content="Mohammed Kabeer | Full-Stack Developer">
-    <meta property="og:description" content="Portfolio showcasing Full-Stack Development and AI projects.">
+    <meta property="og:title" content="Mohammed Kabeer | Developer Portfolio">
+    <meta property="og:description" content="Final-year Computer Science student building practical web applications and exploring AI integrations.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kabeer-321.github.io/">
     <meta property="og:image" content="https://kabeer-321.github.io/assets/images/profile.jpg">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohammed Kabeer | Full-Stack Developer">
-    <meta name="twitter:description" content="Portfolio showcasing Full-Stack Development and AI projects.">
+    <meta name="twitter:title" content="Mohammed Kabeer | Developer Portfolio">
+    <meta name="twitter:description" content="Final-year Computer Science student building practical web applications and exploring AI integrations.">
+    <meta name="twitter:image" content="https://kabeer-321.github.io/assets/images/profile.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -29,7 +31,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Mohammed Kabeer Mattesabannavar",
-      "jobTitle": "Full-Stack Developer",
+      "jobTitle": "Computer Science Student & Developer",
+      "alumniOf": "SDM College of Engineering and Technology, Dharwad",
       "url": "https://kabeer-321.github.io/",
       "sameAs": [
         "https://github.com/KABEER-321",
@@ -38,106 +41,52 @@
     }
     </script>
     
-    <!-- Preload Fonts -->
+    <!-- Google Fonts: Editorial Serif + Clean Sans + Technical Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" defer>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" defer>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" defer/>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
-    <!-- Custom CSS -->
+    <!-- Custom Editorial Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
+<body>
 
-    <!-- Scroll Progress Indicator -->
+    <!-- Reading Progress Bar -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scroll-bar"></div>
     </div>
 
-    <!-- Loading Screen -->
-    <div id="loader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <h2 class="loader-logo">MK<span>.</span></h2>
-        </div>
-    </div>
-
-    <!-- Resume Preview Modal -->
-    <div id="resume-modal" class="modal">
-        <div class="modal-content glass-card">
-            <span class="close-modal">&times;</span>
-            <h2>Resume Preview</h2>
-            <div class="pdf-container">
-                <iframe
-                    id="resume-iframe"
-                    src="assets/resume/Mohammed_Kabeer_Resume.pdf"
-                    width="100%"
-                    height="600"
-                    style="border: none; display: block;">
-                </iframe>
-                <div id="resume-fallback" style="display: none; padding: 3rem 1.5rem; text-align: center; color: var(--text-color);">
-                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable on mobile.</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">You can view the resume directly in a new tab or download it below.</p>
-                    <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" target="_blank" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <i class="fas fa-external-link-alt"></i> Open in New Tab
-                    </a>
-                </div>
-            </div>
-            <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" class="btn btn-primary mt-1" download>
-                Download Resume
-            </a>
-        </div>
-    </div>
-
-    <!-- Certificate Preview Modal -->
-    <div id="cert-modal" class="modal">
-        <div class="modal-content glass-card">
-            <span class="close-modal close-cert">&times;</span>
-            <h2 id="cert-modal-title">Certificate Preview</h2>
-            <div class="pdf-container">
-                <iframe id="cert-iframe" src="" width="100%" height="600" style="border: none; display: block;"></iframe>
-                <div id="cert-fallback" style="display: none; padding: 3rem 1.5rem; text-align: center; color: var(--text-color);">
-                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 500;">Preview unavailable on mobile.</p>
-                    <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 1.5rem;">You can view the certificate directly in a new tab or download it below.</p>
-                    <a href="#" id="view-new-tab" target="_blank" class="btn btn-outline btn-sm" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                        <i class="fas fa-external-link-alt"></i> Open in New Tab
-                    </a>
-                </div>
-            </div>
-            <a href="#" id="download-cert" class="btn btn-primary mt-1" download>
-                <i class="fas fa-download"></i> Download Certificate
-            </a>
-        </div>
-    </div>
-
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-
-    <!-- Navigation -->
+    <!-- Navigation Header -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Kabeer<span>.</span></a>
+            <a href="#home" class="nav__logo">Kabeer<span>.</span></a>
             
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#github" class="nav__link">GitHub</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
+                    <li><a href="#skills" class="nav__link">Skills</a></li>
+                    <li><a href="#education" class="nav__link">Education</a></li>
+                    <li><a href="#github" class="nav__link">GitHub</a></li>
+                    <li><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class="mobile-only-nav"><a href="#" class="nav__link open-resume-footer"><i class="fas fa-file-pdf"></i> View Resume (PDF)</a></li>
                 </ul>
-                <div class="nav__close" id="nav-close">
+                <div class="nav__close" id="nav-close" aria-label="Close menu">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="nav__actions">
+                <button id="open-resume-nav" class="btn btn-outline btn-sm">
+                    <i class="fas fa-file-pdf"></i> Resume
+                </button>
+                <div class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -146,176 +95,108 @@
     <main class="main">
         
         <!-- Hero Section -->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content" data-aos="fade-right">
-                    <div class="internship-badge glass-card">
-                        <span class="pulse-dot"></span> Available For Internship
+        <section class="hero section" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">
+                        <span class="status-dot"></span>
+                        <span>Final-Year CSE Student · SDMCET Dharwad</span>
                     </div>
-                    <span class="home__subtitle mt-1">Hello, I'm</span>
-                    <h1 class="home__title">Mohammed Kabeer<br>Mattesabannavar</h1>
-                    <h3 class="home__education">
-                        <span class="typing-text"></span>
-                    </h3>
-                    <p class="home__description">
-                        Computer Science Engineering student at SDMCET passionate about Full-Stack Development, AI Applications, Django, Flask, REST APIs, Databases and Modern Web Technologies.
+
+                    <h1 class="hero__title">
+                        Hi, I'm Mohammed Kabeer.
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        Computer Science student building practical web applications and exploring AI-powered tools.
                     </p>
-                    
-                    <div class="home__social">
-                        <a href="https://github.com/KABEER-321" target="_blank" class="home__social-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373/" target="_blank" class="home__social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:mdkabeermm786786@gmail.com" class="home__social-icon"><i class="fas fa-envelope"></i></a>
+
+                    <p class="hero__bio">
+                        I am an engineering student at SDM College of Engineering and Technology, Dharwad. I focus on backend programming in Python, designing relational database schemas in SQLite and MySQL, building clean REST APIs with Django and Flask, and connecting Google Gemini AI to resolve practical workflow problems.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Projects <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <button id="open-resume" class="btn btn-outline">
+                            <i class="fas fa-file-pdf"></i> View Resume
+                        </button>
                     </div>
 
-                    <div class="home__buttons">
-                        <a href="#projects" class="btn btn-primary glow-btn">View Projects</a>
-                        <button id="open-resume" class="btn btn-outline glow-btn-outline">Preview Resume <i class="fas fa-file-pdf"></i></button>
+                    <div class="hero__social">
+                        <span class="hero__social-label">Connect</span>
+                        <a href="https://github.com/KABEER-321" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:mdkabeermm786786@gmail.com" class="hero__social-link" aria-label="Send Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="home__img-wrapper" data-aos="fade-left">
-                    <div class="home__img-bg"></div>
-                    <img src="assets/images/profile.jpg" alt="Mohammed Kabeer Profile" class="home__img">
+                <div class="hero__visual">
+                    <div class="hero__card">
+                        <div class="hero__photo-wrapper">
+                            <img src="assets/images/profile.jpg" alt="Mohammed Kabeer Mattesabannavar" class="hero__photo" width="380" height="475">
+                        </div>
+                        <div class="hero__card-caption">
+                            <strong>Mohammed Kabeer</strong>
+                            <span>SDMCET CSE '25</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Professional Metrics Section -->
-        <section class="metrics section container" data-aos="fade-up">
-            <div class="metrics__container glass-card grid">
-                <div class="metrics__box">
-                    <h3 class="metrics__number">8.48</h3>
-                    <span class="metrics__label">CGPA / 10</span>
-                </div>
-                <div class="metrics__box">
-                    <h3 class="metrics__number">10+</h3>
-                    <span class="metrics__label">Projects Completed</span>
-                </div>
-                <div class="metrics__box">
-                    <h3 class="metrics__number">Current</h3>
-                    <span class="metrics__label">Internships</span>
-                </div>
-                <div class="metrics__box">
-                    <h3 class="metrics__number">15+</h3>
-                    <span class="metrics__label">Technologies</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
+        <!-- About Section (Unboxed Editorial Layout) -->
         <section class="about section" id="about">
-            <h2 class="section__title" data-aos="fade-up">About Me</h2>
-            <span class="section__subtitle" data-aos="fade-up">My Introduction</span>
-
-            <div class="about__container container grid">
-                <div class="about__data glass-card hover-glow" data-aos="zoom-in">
-                    <p class="about__description">
-                        I am a BE Computer Science student at SDM College of Engineering and Technology. My primary focus lies at the intersection of AI and Full-Stack Development. With hands-on experience in Django, Flask, SQL, and REST APIs, I build robust systems designed with a problem-solving mindset. I am a continuous learner, constantly exploring modern frameworks and AI integrations to deliver premium digital solutions.
-                    </p>
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Background</span>
+                    <h2 class="section__title">Practical engineering & genuine curiosity</h2>
+                    <p class="section__subtitle">How I approach software development, what I have built, and what I am learning next.</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Skills Section with Animated Progress -->
-        <section class="skills section" id="skills">
-            <h2 class="section__title" data-aos="fade-up">Skills</h2>
-            <span class="section__subtitle" data-aos="fade-up">My Technical Level</span>
-
-            <div class="skills__container container grid">
-                <!-- Frontend -->
-                <div class="skills__content glass-card hover-glow" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="skills__title"><i class="fas fa-laptop-code"></i> Frontend</h3>
-                    <div class="skills__list">
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">HTML5 / CSS3</span>
-                                <span class="skill__number">90%</span>
-                            </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="90%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">JavaScript</span>
-                                <span class="skill__number">85%</span>
-                            </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="85%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">Responsive Design</span>
-                                <span class="skill__number">95%</span>
-                            </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="95%"></span></div>
-                        </div>
+                <div class="about__grid">
+                    <div class="about__prose">
+                        <p>
+                            I am a final-year Computer Science Engineering student at <strong>SDM College of Engineering and Technology, Dharwad</strong>. I started building web software because I wanted to understand how backend architectures actually function behind the scenes — from session authentication and database indexing to API serialization.
+                        </p>
+                        <p>
+                            Instead of building trivial toy demos, I look for real administrative and developer friction points. In college, noticing how attendance recording and parent notifications were scattered across manual rosters led me to architect <strong>SmartCampus ERP</strong>. Building it taught me how to enforce strict role-based access control across four distinct user groups in Django, organize relational schemas, and ground Google Gemini AI responses in college documents using RAG.
+                        </p>
+                        <p>
+                            Similarly, troubleshooting cryptic compiler errors in programming labs prompted me to build <strong>AI Bug Solver</strong> to break error traces down into structured, pedagogical explanations. I believe in writing readable, maintainable code with zero unnecessary dependencies, and I am actively preparing for full-time entry-level software engineering roles and internships.
+                        </p>
                     </div>
-                </div>
 
-                <!-- Backend -->
-                <div class="skills__content glass-card hover-glow" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="skills__title"><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skills__list">
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">Python</span>
-                                <span class="skill__number">90%</span>
+                    <div class="about__ledger">
+                        <h3 class="about__ledger-title">Academic & Technical Snapshot</h3>
+                        <div class="about__ledger-list">
+                            <div class="about__ledger-item">
+                                <span class="about__ledger-label">Current Academic Standing</span>
+                                <span class="about__ledger-value">B.E. in Computer Science & Engineering, SDMCET (CGPA: 8.48 / 10.0)</span>
                             </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="90%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">Django & Flask</span>
-                                <span class="skill__number">85%</span>
+                            <div class="about__ledger-item">
+                                <span class="about__ledger-label">Pre-University Education</span>
+                                <span class="about__ledger-value">KLE Independent PU College, Hangal — Science (86.33%)</span>
                             </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="85%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">REST APIs</span>
-                                <span class="skill__number">80%</span>
+                            <div class="about__ledger-item">
+                                <span class="about__ledger-label">Primary Languages</span>
+                                <span class="about__ledger-value">Python, JavaScript (ES6+), SQL, Java basics, C</span>
                             </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="80%"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Database -->
-                <div class="skills__content glass-card hover-glow" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="skills__title"><i class="fas fa-database"></i> Database</h3>
-                    <div class="skills__list">
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">MySQL</span>
-                                <span class="skill__number">85%</span>
+                            <div class="about__ledger-item">
+                                <span class="about__ledger-label">Backend & Architecture</span>
+                                <span class="about__ledger-value">Django, Flask, RESTful APIs, Relational Database Modeling (SQLite, MySQL)</span>
                             </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="85%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">SQLite</span>
-                                <span class="skill__number">90%</span>
+                            <div class="about__ledger-item">
+                                <span class="about__ledger-label">AI Integration Experience</span>
+                                <span class="about__ledger-value">Google Gemini API, Retrieval-Augmented Generation (RAG) concepts, prompt structuring</span>
                             </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="90%"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI/ML & Tools -->
-                <div class="skills__content glass-card hover-glow" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="skills__title"><i class="fas fa-robot"></i> AI & Tools</h3>
-                    <div class="skills__list">
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">Gemini API & RAG</span>
-                                <span class="skill__number">85%</span>
-                            </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="85%"></span></div>
-                        </div>
-                        <div class="skill__data">
-                            <div class="skill__titles">
-                                <span class="skill__name">Git & GitHub</span>
-                                <span class="skill__number">90%</span>
-                            </div>
-                            <div class="skill__bar"><span class="skill__percentage" data-width="90%"></span></div>
                         </div>
                     </div>
                 </div>
@@ -324,277 +205,523 @@
 
         <!-- Featured Projects Section -->
         <section class="projects section" id="projects">
-            <h2 class="section__title" data-aos="fade-up">Featured Projects</h2>
-            <span class="section__subtitle" data-aos="fade-up">My Best Work</span>
-
             <div class="container">
-                <div class="project-filters" data-aos="fade-up">
-                    <button class="filter-btn active-filter" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web Development</button>
-                    <button class="filter-btn" data-filter="ai">AI Projects</button>
-                    <button class="filter-btn" data-filter="python">Python Projects</button>
+                <div class="section__header">
+                    <span class="section__eyebrow">Portfolio</span>
+                    <h2 class="section__title">Featured Projects</h2>
+                    <p class="section__subtitle">Working software applications with real code repositories and authentic screenshots.</p>
                 </div>
 
-                <div class="projects__container grid">
+                <!-- Project Category Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active-filter" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Applications</button>
+                    <button class="filter-btn" data-filter="ai">AI Integrations</button>
+                    <button class="filter-btn" data-filter="python">Python / Django</button>
+                </div>
+
+                <!-- Centerpiece Featured Project: SmartCampus ERP Portal -->
+                <article class="project-centerpiece project-item" data-category="web ai python">
+                    <div class="project-centerpiece__visual">
+                        <a href="project-smartcampus.html" class="project-centerpiece__img-link" aria-label="View SmartCampus ERP Portal Case Study">
+                            <!-- Using authentic, real application screenshot from SDMCET Admin Dashboard -->
+                            <img src="assets/images/smartcampus/sc-admin.png" alt="SmartCampus ERP Admin Dashboard real screenshot showing user management and role overview" class="project-centerpiece__img" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="project-centerpiece__body">
+                        <div>
+                            <div class="project-badge-row">
+                                <span class="project-badge">Featured Academic Project</span>
+                                <span class="tag tag--accent">Django · SQLite · Gemini RAG</span>
+                            </div>
+                            <h3 class="project-centerpiece__title">
+                                <a href="project-smartcampus.html">SmartCampus ERP Portal</a>
+                            </h3>
+                            <p class="project-centerpiece__desc">
+                                A comprehensive role-based academic management platform designed for college administrators, faculty, students, and parents. Built with Django and SQLite to replace fragmented paper registers with centralized digital workflows.
+                            </p>
+                            <div class="project-highlights">
+                                <div class="project-highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Role-Based Access:</strong> Enforced dedicated, isolated dashboard views for Admin, Faculty, Students, and Parents.</div>
+                                </div>
+                                <div class="project-highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>Academic Operations:</strong> Batch-marking attendance registers, timetable schedules, and automated percentage calculations.</div>
+                                </div>
+                                <div class="project-highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div><strong>AI Campus Assistant:</strong> Gemini API integration grounded in college policy documents via RAG for accurate FAQ answers.</div>
+                                </div>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">SQLite</span>
+                                <span class="tag">Gemini API</span>
+                                <span class="tag">REST Endpoints</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="project-smartcampus.html" class="btn btn-primary btn-sm">
+                                Read Detailed Case Study <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="https://github.com/KABEER-321/sdmcet-chatbot" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                <i class="fab fa-github"></i> Repository (sdmcet-chatbot)
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Secondary Projects Grid -->
+                <div class="projects-grid">
                     
-                    <!-- Project 1 -->
-                    <article class="projects__card glass-card hover-glow project-item" data-category="web ai python" data-aos="zoom-in" data-aos-delay="100">
-                        <a href="project-smartcampus.html" class="project-card__link">
-                            <div class="projects__image">
-                                <img src="assets/images/smartcampus-hero.png" alt="SmartCampus Project" class="projects__img" loading="lazy">
-                            </div>
-                            <div class="projects__content">
-                                <h3 class="projects__title">SmartCampus ERP Portal</h3>
-                                <p class="projects__description">AI-Powered Academic Management Platform with role-based dashboards and Gemini integration.</p>
-                                <div class="projects__tags">
-                                    <span class="tag">Django</span>
-                                    <span class="tag">SQLite</span>
+                    <!-- Project 2: AI Bug Solver -->
+                    <article class="project-card project-item" data-category="web ai">
+                        <div class="project-card__visual">
+                            <a href="project-bugtracker.html" aria-label="View AI Bug Solver Case Study">
+                                <!-- Using authentic, real application screenshot of diagnostic output -->
+                                <img src="assets/images/bugsolver/bs-solution.png" alt="AI Bug Solver real interface screenshot showing error diagnosis and corrected code" class="project-card__img" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-card__body">
+                            <div>
+                                <div class="project-badge-row">
+                                    <span class="project-badge">Developer Tool</span>
+                                    <span class="tag tag--accent">Gemini API · Deployed</span>
+                                </div>
+                                <h3 class="project-card__title">
+                                    <a href="project-bugtracker.html">AI Bug Solver</a>
+                                </h3>
+                                <p class="project-card__desc">
+                                    An interactive debugging assistant that analyzes error tracebacks and broken code snippets using Google Gemini AI, returning structured root-cause explanations and annotated code fixes.
+                                </p>
+                                <div class="project-tags">
                                     <span class="tag">Gemini API</span>
-                                    <span class="tag">RAG</span>
-                                    <span class="tag">JS</span>
-                                </div>
-                                <div class="projects__links mt-1">
-                                    <span class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> View Project</span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="projects__card glass-card hover-glow project-item" data-category="web python ai" data-aos="zoom-in" data-aos-delay="200">
-                        <a href="project-bugtracker.html" class="project-card__link">
-                            <div class="projects__image">
-                                <img src="assets/images/bugsolver-hero.png" alt="AI Bug Solver" class="projects__img" loading="lazy">
-                            </div>
-                            <div class="projects__content">
-                                <h3 class="projects__title">AI Bug Solver</h3>
-                                <p class="projects__description">An AI-powered bug diagnosis and code debugging platform that helps developers resolve errors using Gemini AI.</p>
-                                <div class="projects__tags">
-                                    <span class="tag">HTML5</span>
+                                    <span class="tag">JavaScript (ES6+)</span>
                                     <span class="tag">CSS3</span>
-                                    <span class="tag">JS</span>
-                                    <span class="tag">Gemini API</span>
-                                </div>
-                                <div class="projects__links mt-1">
-                                    <span class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> View Project</span>
+                                    <span class="tag">HTML5</span>
                                 </div>
                             </div>
-                        </a>
+                            <div class="project-actions">
+                                <a href="project-bugtracker.html" class="btn btn-primary btn-sm">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://ai-bug-solver.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/KABEER-321/ai-bug-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
                     </article>
 
-                    <!-- Project 4 -->
-                    <article class="projects__card glass-card hover-glow project-item" data-category="web" data-aos="zoom-in">
-                        <a href="project-portfolio.html" class="project-card__link">
-                            <div class="projects__image">
-                                <img src="assets/images/project3.png" alt="Portfolio Website" class="projects__img" loading="lazy">
-                            </div>
-                            <div class="projects__content">
-                                <h3 class="projects__title">Personal Portfolio</h3>
-                                <p class="projects__description">Premium cyberpunk developer portfolio with glassmorphism UI and live GitHub integration.</p>
-                                <div class="projects__tags">
-                                    <span class="tag">HTML</span>
-                                    <span class="tag">CSS</span>
-                                    <span class="tag">JavaScript</span>
+                    <!-- Project 3: Personal Developer Portfolio -->
+                    <article class="project-card project-item" data-category="web">
+                        <div class="project-card__visual">
+                            <a href="project-portfolio.html" aria-label="View Personal Portfolio Case Study">
+                                <!-- Using authentic real screenshot of this redesigned portfolio -->
+                                <img src="assets/images/portfolio-preview.png" alt="Mohammed Kabeer Personal Portfolio live interface capture" class="project-card__img" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-card__body">
+                            <div>
+                                <div class="project-badge-row">
+                                    <span class="project-badge">Personal Portfolio</span>
+                                    <span class="tag">Vanilla Web Stack</span>
                                 </div>
-                                <div class="projects__links mt-1">
-                                    <span class="btn btn-primary btn-sm"><i class="fas fa-arrow-right"></i> View Project</span>
+                                <h3 class="project-card__title">
+                                    <a href="project-portfolio.html">Personal Developer Portfolio</a>
+                                </h3>
+                                <p class="project-card__desc">
+                                    My personal developer portfolio built from scratch with semantic HTML5, custom CSS3, and modern vanilla JavaScript. Engineered for fast load times, accessible PDF viewing, and mobile-first responsiveness without framework bloat.
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Semantic HTML5</span>
+                                    <span class="tag">Custom CSS3</span>
+                                    <span class="tag">Vanilla JS</span>
+                                    <span class="tag">GitHub REST API</span>
                                 </div>
                             </div>
-                        </a>
+                            <div class="project-actions">
+                                <a href="project-portfolio.html" class="btn btn-primary btn-sm">
+                                    Case Study <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="https://github.com/KABEER-321/Personal-Protfolio" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
                     </article>
 
                 </div>
             </div>
         </section>
 
-        <!-- Live GitHub Section -->
-        <section class="github section" id="github">
-            <h2 class="section__title" data-aos="fade-up">GitHub Activity</h2>
-            <span class="section__subtitle" data-aos="fade-up">Open Source Contributions</span>
+        <!-- Technical Skills Section (Unboxed Editorial Index) -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Technical Competencies</span>
+                    <h2 class="section__title">Skills & Tooling Overview</h2>
+                    <p class="section__subtitle">Technologies and developer tools categorized by verified project usage, without subjective percentages.</p>
+                </div>
 
-            <div class="container grid">
+                <div class="skills-index">
+                    <!-- Languages -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-code skills-group__icon"></i>
+                            <h3 class="skills-group__title">Languages</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">Python</span>
+                            <span class="tag">JavaScript (ES6+)</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <p class="skills-group__note">Primary programming languages used for backend logic, database queries, and client-side interfaces.</p>
+                    </div>
 
-                <!-- Live Repos Showcase -->
-                <div class="github-repos mt-1" data-aos="fade-up">
-                    <h3 class="skills__title text-center mb-1"><i class="fas fa-code-branch"></i> Latest Repositories</h3>
-                    <div class="repo-container grid" id="repo-container">
-                        <!-- Fetched via JS -->
-                        <div class="text-center w-100">Loading repositories via API...</div>
+                    <!-- Backend & APIs -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-server skills-group__icon"></i>
+                            <h3 class="skills-group__title">Backend & APIs</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">Django</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">RESTful Endpoints</span>
+                            <span class="tag">Role Permissions</span>
+                            <span class="tag">MTV / MVC</span>
+                        </div>
+                        <p class="skills-group__note">Server-side web development with Python, custom session authentication, and structured endpoint routing.</p>
+                    </div>
+
+                    <!-- Databases & Storage -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-database skills-group__icon"></i>
+                            <h3 class="skills-group__title">Databases & Storage</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">SQLite</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Relational Schemas</span>
+                            <span class="tag">Foreign Key Constraints</span>
+                        </div>
+                        <p class="skills-group__note">Hands-on database modeling, table relationships, foreign key integrity, and relational SQL operations.</p>
+                    </div>
+
+                    <!-- Frontend & UI -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-laptop-code skills-group__icon"></i>
+                            <h3 class="skills-group__title">Frontend</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">Responsive CSS</span>
+                            <span class="tag">CSS Grid & Flexbox</span>
+                            <span class="tag">Native DOM APIs</span>
+                            <span class="tag">React / Vite (Exposure)</span>
+                            <span class="tag">Tailwind CSS (Exposure)</span>
+                        </div>
+                        <p class="skills-group__note">Semantic, accessible layout design, fluid clamp typography, and component-based frontend exposure.</p>
+                    </div>
+
+                    <!-- AI & Integrations -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-robot skills-group__icon"></i>
+                            <h3 class="skills-group__title">AI & Integrations</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">Google Gemini API</span>
+                            <span class="tag">Prompt Engineering</span>
+                            <span class="tag">RAG Concepts</span>
+                            <span class="tag">JSON Parsing</span>
+                        </div>
+                        <p class="skills-group__note">Hands-on experience integrating LLM APIs for automated code debugging and college query handling.</p>
+                    </div>
+
+                    <!-- Developer Workflow -->
+                    <div class="skills-group">
+                        <div class="skills-group__header">
+                            <i class="fas fa-tools skills-group__icon"></i>
+                            <h3 class="skills-group__title">Workflow & Tools</h3>
+                        </div>
+                        <div class="skills-pill-group">
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Netlify</span>
+                            <span class="tag">PowerShell / Bash</span>
+                        </div>
+                        <p class="skills-group__note">Branch-based version control, static hosting deployments, and command-line developer workflows.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education & Achievements Section -->
+        <!-- Education & Highlights Section (Unboxed Editorial Layout) -->
         <section class="education section" id="education">
-            <h2 class="section__title" data-aos="fade-up">Education & Highlights</h2>
-            <span class="section__subtitle" data-aos="fade-up">Academic & Certifications</span>
-
-            <div class="education__container container grid">
-                
-                <!-- Education Timeline -->
-                <div class="education__content" data-aos="fade-right">
-                    <h3 class="education__title"><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="timeline glass-card hover-glow">
-                        <div class="timeline__item">
-                            <div class="timeline__dot"></div>
-                            <h3 class="timeline__title">BE Computer Science</h3>
-                            <span class="timeline__subtitle">SDM College of Engineering and Technology</span>
-                            <p class="timeline__text text-gradient fw-bold">CGPA: 8.48/10</p>
-                        </div>
-
-                        <div class="timeline__item">
-                            <div class="timeline__dot"></div>
-                            <h3 class="timeline__title">PUC (Science)</h3>
-                            <span class="timeline__subtitle">KLE Independent PU College, Hangal</span>
-                            <p class="timeline__text text-gradient fw-bold">Percentage: 86.33%</p>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Academic Record</span>
+                    <h2 class="section__title">Education & Certifications</h2>
+                    <p class="section__subtitle">Formal academic qualifications and verified technical coursework.</p>
                 </div>
 
-                <!-- Achievements -->
-                <div class="achievements__content" data-aos="fade-left">
-                    <h3 class="education__title"><i class="fas fa-trophy"></i> Achievements</h3>
-                    <div class="achievements__list glass-card hover-glow">
-                        <ul class="achievements__ul">
-                            <li><i class="fas fa-check-circle text-gradient"></i><span>Maintained outstanding CGPA of 8.48/10</span></li>
-                            <li><i class="fas fa-check-circle text-gradient"></i><span>Built multiple Full-Stack Web Applications</span></li>
-                            <li><i class="fas fa-check-circle text-gradient"></i><span>Developed cutting-edge AI-powered Projects</span></li>
-                            <li><i class="fas fa-check-circle text-gradient"></i><span>Secured meaningful Internship Experience</span></li>
-                            <li><i class="fas fa-check-circle text-gradient"></i><span>Earned multiple Technical Certifications</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                <div class="education__grid">
+                    <!-- Academic Timeline (Open, Unboxed) -->
+                    <div class="timeline-open">
+                        <div class="timeline-open-item">
+                            <div class="timeline-bullet"></div>
+                            <div class="timeline-date">2021 – 2025 (Final Year)</div>
+                            <h3 class="timeline-heading">Bachelor of Engineering (B.E.) in Computer Science & Engineering</h3>
+                            <p class="timeline-institution">SDM College of Engineering and Technology, Dharwad</p>
+                            <span class="timeline-score">CGPA: 8.48 / 10.0</span>
+                        </div>
 
-            <!-- Certifications -->
-            <div class="container mt-2" data-aos="fade-up">
-                <h3 class="education__title text-center mb-1"><i class="fas fa-certificate"></i> Certifications</h3>
-                <div class="certifications__list grid">
-                    <div class="cert__card glass-card hover-glow">
-                        <i class="fas fa-shield-alt cert__icon"></i>
-                        <h4 class="cert__title">Cybersecurity Fundamentals</h4>
-                        <span class="cert__issuer">Coursera</span>
-                        <a href="#" class="btn btn-outline btn-sm mt-1 open-cert-btn" data-cert="assets/certificates/cybersecurity-fundamentals.pdf" data-title="Cybersecurity Fundamentals">View Certificate</a>
+                        <div class="timeline-open-item">
+                            <div class="timeline-bullet"></div>
+                            <div class="timeline-date">2019 – 2021</div>
+                            <h3 class="timeline-heading">Pre-University Course (PUC — Science, PCMB)</h3>
+                            <p class="timeline-institution">KLE Independent PU College, Hangal</p>
+                            <span class="timeline-score">Percentage: 86.33%</span>
+                        </div>
                     </div>
-                    <div class="cert__card glass-card hover-glow">
-                        <i class="fas fa-database cert__icon"></i>
-                        <h4 class="cert__title">MongoDB Course Completion</h4>
-                        <span class="cert__issuer">MongoDB</span>
-                        <a href="#" class="btn btn-outline btn-sm mt-1 open-cert-btn" data-cert="assets/certificates/mongodb-certification.pdf" data-title="MongoDB Course Completion">View Certificate</a>
+
+                    <!-- Verified Certifications (Open Ledger) -->
+                    <div class="certs-ledger">
+                        <h3 class="certs-ledger-title">Verified Certifications</h3>
+                        <div class="certs-list">
+                            <div class="cert-entry">
+                                <div class="cert-meta">
+                                    <h4 class="cert-name">Cybersecurity Fundamentals</h4>
+                                    <span class="cert-provider">Coursera</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm open-cert-btn" data-cert="assets/certificates/cybersecurity-fundamentals.pdf" data-title="Cybersecurity Fundamentals">
+                                    <i class="fas fa-file-pdf"></i> View Certificate
+                                </button>
+                            </div>
+
+                            <div class="cert-entry">
+                                <div class="cert-meta">
+                                    <h4 class="cert-name">MongoDB Course Completion</h4>
+                                    <span class="cert-provider">MongoDB University</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm open-cert-btn" data-cert="assets/certificates/mongodb-certification.pdf" data-title="MongoDB Course Completion">
+                                    <i class="fas fa-file-pdf"></i> View Certificate
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section class="experience section container" id="experience">
-            <h2 class="section__title" data-aos="fade-up">Experience</h2>
-            <span class="section__subtitle" data-aos="fade-up">Professional Journey</span>
+        <!-- Live GitHub Activity Section (Open Ledger Layout) -->
+        <section class="github section" id="github">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Open Source</span>
+                    <h2 class="section__title">Latest GitHub Repositories</h2>
+                    <p class="section__subtitle">Live feed populated directly from the GitHub REST API for @KABEER-321.</p>
+                </div>
 
-            <div class="experience__container timeline glass-card hover-glow" data-aos="fade-right">
-                <div class="timeline__item">
-                    <div class="timeline__dot"></div>
-                    <h3 class="timeline__title">Full Stack Development Internship</h3>
-                    <span class="timeline__subtitle">Remote</span>
-                    <div class="timeline__calendar">
-                        <i class="far fa-calendar-alt"></i> 2026 - Present
+                <div class="repo-ledger" id="repo-container">
+                    <div style="padding: 2rem; text-align: center; color: var(--text-muted); font-size: var(--text-sm); grid-column: 1 / -1;">
+                        <i class="fas fa-spinner fa-spin"></i> Loading latest public repositories...
                     </div>
-                    <p class="timeline__text">Currently engaged in developing scalable full-stack applications, utilizing modern web frameworks, and refining problem-solving capabilities in a professional environment.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section class="contact section" id="contact">
-            <h2 class="section__title" data-aos="fade-up">Get In Touch</h2>
-            <span class="section__subtitle" data-aos="fade-up">Contact Me</span>
-
-            <div class="contact__container container grid">
-                <div class="contact__content glass-card hover-glow" data-aos="fade-right">
-                    <h3 class="contact__title">Talk to me</h3>
-
-                    <div class="contact__info">
-                        <div class="contact__card">
-                            <i class="far fa-envelope contact__card-icon"></i>
-                            <h3 class="contact__card-title">Email</h3>
-                            <span class="contact__card-data">mdkabeermm786786@gmail.com</span>
-                            <a href="mailto:mdkabeermm786786@gmail.com" class="contact__button">Write me <i class="fas fa-arrow-right contact__button-icon"></i></a>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Get in Touch</span>
+                    <h2 class="section__title">Contact & Opportunities</h2>
+                    <p class="section__subtitle">Interested in collaborating or discussing entry-level engineering roles? Reach out directly.</p>
                 </div>
 
-                <div class="contact__content glass-card hover-glow" data-aos="fade-left">
-                    <h3 class="contact__title">Write me your project</h3>
+                <div class="contact__grid">
+                    <!-- Contact Details (Open Ledger) -->
+                    <div class="contact-details">
+                        <p class="contact-details__intro">
+                            I am actively seeking full-time entry-level software development roles and internships. If you have questions about my projects or would like to discuss engineering opportunities, feel free to reach out.
+                        </p>
 
-                    <form id="contact-form" class="contact__form">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="text" name="_honey" style="display:none">
+                        <div class="contact-methods">
+                            <div class="contact-method-entry">
+                                <span class="contact-method-entry-label">Email</span>
+                                <a href="mailto:mdkabeermm786786@gmail.com" class="contact-method-entry-val">mdkabeermm786786@gmail.com</a>
+                            </div>
 
-                        <div class="contact__form-div">
-                            <label class="contact__form-tag">Name</label>
-                            <input type="text" name="name" id="contact-name" placeholder="Insert your name" class="contact__form-input" required>
+                            <div class="contact-method-entry">
+                                <span class="contact-method-entry-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373/" target="_blank" rel="noopener noreferrer" class="contact-method-entry-val">mohammed-kabeer-m</a>
+                            </div>
+
+                            <div class="contact-method-entry">
+                                <span class="contact-method-entry-label">GitHub</span>
+                                <a href="https://github.com/KABEER-321" target="_blank" rel="noopener noreferrer" class="contact-method-entry-val">KABEER-321</a>
+                            </div>
+
+                            <div class="contact-method-entry">
+                                <span class="contact-method-entry-label">Location</span>
+                                <span class="contact-method-entry-val">Dharwad, Karnataka, India</span>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="contact__form-div">
-                            <label class="contact__form-tag">Email</label>
-                            <input type="email" name="email" id="contact-email" placeholder="Insert your email" class="contact__form-input" required>
-                        </div>
+                    <!-- Contact Form Card (Retained Card for Grouping) -->
+                    <div class="contact__form-card">
+                        <form id="contact-form" class="contact__form">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-                        <div class="contact__form-div">
-                            <label class="contact__form-tag">Subject</label>
-                            <input type="text" name="subject" id="contact-subject" placeholder="Message subject" class="contact__form-input" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Name</label>
+                                <input type="text" name="name" id="contact-name" placeholder="Your full name" class="form-input" required>
+                            </div>
 
-                        <div class="contact__form-div contact__form-area">
-                            <label class="contact__form-tag">Message</label>
-                            <textarea name="message" id="contact-project" cols="30" rows="10" placeholder="Write your message here" class="contact__form-input" required></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email Address</label>
+                                <input type="email" name="email" id="contact-email" placeholder="you@domain.com" class="form-input" required>
+                            </div>
 
-                        <div class="form-message" id="form-message"></div>
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Subject</label>
+                                <input type="text" name="subject" id="contact-subject" placeholder="What is this regarding?" class="form-input" required>
+                            </div>
 
-                        <button class="btn btn-primary glow-btn" type="submit">
-                            Send Message <i class="far fa-paper-plane"></i>
-                        </button>
-                    </form>
+                            <div class="form-group">
+                                <label for="contact-project" class="form-label">Message</label>
+                                <textarea name="message" id="contact-project" rows="5" placeholder="Share project details, job description, or message..." class="form-textarea" required></textarea>
+                            </div>
+
+                            <div class="form-message" id="form-message" role="alert" aria-live="polite"></div>
+
+                            <button type="submit" class="btn btn-primary">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Professional Footer -->
+    <!-- Editorial Footer -->
     <footer class="footer">
         <div class="footer__container container">
-            <h1 class="footer__title">Kabeer<span>.</span></h1>
+            <div class="footer__top">
+                <div class="footer__brand">
+                    Mohammed Kabeer<span>.</span>
+                </div>
 
-            <ul class="footer__list">
-                <li><a href="#about" class="footer__link">About</a></li>
-                <li><a href="#projects" class="footer__link">Projects</a></li>
-                <li><a href="#github" class="footer__link">GitHub</a></li>
-                <li><a href="#" class="footer__link open-resume-footer">Resume</a></li>
-            </ul>
+                <ul class="footer__links">
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#projects" class="footer__link">Projects</a></li>
+                    <li><a href="#skills" class="footer__link">Skills</a></li>
+                    <li><a href="#education" class="footer__link">Education</a></li>
+                    <li><a href="#github" class="footer__link">GitHub</a></li>
+                    <li><a href="#" class="footer__link open-resume-footer">Resume</a></li>
+                </ul>
 
-            <ul class="footer__social">
-                <a href="https://github.com/KABEER-321" target="_blank" aria-label="GitHub Profile" class="footer__social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373" target="_blank" aria-label="LinkedIn Profile" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:mdkabeermm786786@gmail.com" aria-label="Email" class="footer__social-link"><i class="fas fa-envelope"></i></a>
-            </ul>
+                <div class="footer__social">
+                    <a href="https://github.com/KABEER-321" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohammed-kabeer-m-0b2520373/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:mdkabeermm786786@gmail.com" class="footer__social-link" aria-label="Email Me">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
 
-            <span class="footer__copy">
-                &#169; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.
-            </span>
+            <div class="footer__bottom">
+                <span>&copy; <span id="current-year"></span> Mohammed Kabeer Mattesabannavar. All rights reserved.</span>
+                <span>Designed & built with semantic HTML5, CSS3 & Vanilla JavaScript.</span>
+            </div>
         </div>
     </footer>
 
-    <!-- Scroll Up -->
-    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up scrollup__icon"></i>
+    <!-- Resume Preview Modal -->
+    <div id="resume-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="resume-modal-title">Resume Preview</h3>
+                <span class="close-modal" id="close-resume" aria-label="Close modal">&times;</span>
+            </div>
+            <div class="pdf-container">
+                <iframe
+                    id="resume-iframe"
+                    src="assets/resume/Mohammed_Kabeer_Resume.pdf"
+                    width="100%"
+                    height="100%"
+                    title="Mohammed Kabeer Resume PDF"
+                    style="border: none; display: block; width: 100%; height: 100%;">
+                </iframe>
+                <div id="resume-fallback" class="pdf-fallback" style="display: none;">
+                    <i class="fas fa-file-pdf" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; display: block;"></i>
+                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main);">Mobile Document Viewer</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Tap below to open or download the complete resume PDF on your device.</p>
+                    <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                        <i class="fas fa-external-link-alt"></i> Open Full Resume (PDF)
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="assets/resume/Mohammed_Kabeer_Resume.pdf" class="btn btn-primary btn-sm" download>
+                    <i class="fas fa-download"></i> Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Preview Modal -->
+    <div id="cert-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="cert-modal-title">Certificate Preview</h3>
+                <span class="close-modal" id="close-cert" aria-label="Close modal">&times;</span>
+            </div>
+            <div class="pdf-container">
+                <iframe id="cert-iframe" src="" width="100%" height="100%" title="Certificate PDF Preview" style="border: none; display: block; width: 100%; height: 100%;"></iframe>
+                <div id="cert-fallback" class="pdf-fallback" style="display: none;">
+                    <i class="fas fa-award" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; display: block;"></i>
+                    <p style="margin-bottom: 0.5rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main);">Mobile Certificate Viewer</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Tap below to open or download this verified certificate PDF on your device.</p>
+                    <a href="#" id="view-new-tab" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                        <i class="fas fa-external-link-alt"></i> Open Certificate (PDF)
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="download-cert" class="btn btn-primary btn-sm" download>
+                    <i class="fas fa-download"></i> Download Certificate (PDF)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Up Button -->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top of page">
+        <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <!-- Custom Modular JavaScript -->
     <script src="script.js" defer></script>
 </body>
 </html>
